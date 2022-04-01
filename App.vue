@@ -18,4 +18,7 @@
 
 <style>
 	/*每个页面公共css */
+	html,body,.app{
+		height: 100%;
+	}
 </style>

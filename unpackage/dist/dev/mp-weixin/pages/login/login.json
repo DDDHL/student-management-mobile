@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "登录",
-  "enablePullDownRefresh": false,
-  "navigationBarBackgroundColor": "#3688FF",
-  "usingComponents": {
-    "u-loading-page": "/node-modules/uview-ui/components/u-loading-page/u-loading-page"
-  }
-}

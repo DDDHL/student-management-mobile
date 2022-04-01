@@ -39,14 +39,22 @@
 			}
 		},
 		{
-			"path": "pages/login/login",
+			"path": "pages/wechatLogin/wechatLogin",
 			"style": {
 				"navigationBarTitleText": "登录",
 				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#3688FF"
+				"navigationBarBackgroundColor": "#97d9e1"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/appLogin/appLogin",
+            "style": {
+            	"navigationBarTitleText": "登录",
+            	"enablePullDownRefresh": false,
+            	"navigationBarBackgroundColor": "#97d9e1"
+            }
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -83,7 +91,11 @@
 		"list": [{
 				"name": "user", 
 				"path": "pages/user/user" 
-			}
+			},
+			{
+					"name": "appLogin", 
+					"path": "pages/appLogin/appLogin" 
+				}
 			
 		]
 	}

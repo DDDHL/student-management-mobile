@@ -1,1 +1,0 @@
-<view><view>wechat</view><u-loading-page vue-id="35a7246c-1" loading="{{isloading}}" loading-text="加载中..." color="#000" fontSize="16" bind:__l="__l"></u-loading-page></view>

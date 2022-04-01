@@ -5,7 +5,8 @@
     "pages/service/service",
     "pages/user/user",
     "pages/userInfo/userInfo",
-    "pages/login/login"
+    "pages/wechatLogin/wechatLogin",
+    "pages/appLogin/appLogin"
   ],
   "subPackages": [],
   "window": {

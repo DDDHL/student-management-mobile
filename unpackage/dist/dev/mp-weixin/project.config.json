@@ -30,6 +30,11 @@
           "name": "user",
           "id": 0,
           "pathName": "pages/user/user"
+        },
+        {
+          "name": "appLogin",
+          "id": 1,
+          "pathName": "pages/appLogin/appLogin"
         }
       ]
     }

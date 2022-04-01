@@ -9,7 +9,8 @@
 				<view class="avatar"><u-avatar :src="avatar" shape="circle" size="55" mode="aspectFill"></u-avatar></view>
 			</u-col>
 			<u-col span="6">
-				<view style="font-weight: 700;">{{ nickName }}</view>
+				<view style="font-weight: 700;" v-if="account">{{ nickName }}</view>
+				<view style="font-weight: 700;" v-else @click="login()">登录</view>
 			</u-col>
 			<u-col span="4">
 				<view v-if="account" style="display: flex;" @click="editInfo">
@@ -20,30 +21,18 @@
 		</u-row>
 
 		<!-- 个人信息 -->
-		<view class="info">
+		<view class="info" v-if="account">
 			<view>
-				<view>
-					1
-				</view>
-				<view style="font-size: 12px;">
-					账号
-				</view>
+				<view>19</view>
+				<view style="font-size: 12px;">年级</view>
 			</view>
 			<view>
-				<view class="">
-					19053158
-				</view>
-				<view style="font-size: 12px;">
-					账号
-				</view>
+				<view>19053158</view>
+				<view style="font-size: 12px;">账号</view>
 			</view>
 			<view>
-				<view>
-					5
-				</view>
-				<view style="font-size: 12px;" >
-					账号
-				</view>
+				<view>学生</view>
+				<view style="font-size: 12px;">职位</view>
 			</view>
 		</view>
 		<!-- list -->
@@ -65,8 +54,11 @@ export default {
 			titleHeight: 50,
 			isLogin: false,
 			avatar: '',
-			nickName: '未登录',
-			account: '19053158'
+			nickName: '',
+			account: '',
+			grade: '',
+			role: '',
+			show:false
 		};
 	},
 	onLoad() {
@@ -91,16 +83,23 @@ export default {
 				}
 			});
 		},
-
+		// 跳转登录页
+		login() {
+			uni.navigateTo({
+				url: '../wechatLogin/wechatLogin'
+			});
+			this.wechatLogin();
+		},
 		// 微信登录获取openid
 		wechatLogin() {
 			uni.getUserProfile({
 				desc: '微信授权登录',
 				success: res => {
-					console.log(res);
+					uni.$emit('login')
 				},
-				fail(err) {
-					console.log('用户拒绝授权', err);
+				fail: err =>{
+					// 用户拒绝微信授权
+					uni.$emit('rejectLogin')
 				}
 			});
 			// 获取openid
