@@ -1,47 +1,77 @@
 <template>
-	<view class="bg">
-		<view class="title" :style="'padding-top:' + titleHeight + 'px'">我的</view>
-		<view class="cu-avatar lg round margin-left margin-top" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
+	<view class="bgColor">
+		<view class="bg">
+			<view class="title" :style="'padding-top:' + titleHeight + 'px'">我的</view>
+			<view class="cu-avatar lg round margin-left margin-top" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
 
-		<!-- 名字 -->
-		<u-row customStyle="margin-bottom: 10px;color: #F1F1F1;">
-			<u-col span="3">
-				<view class="avatar"><u-avatar :src="avatar" shape="circle" size="55" mode="aspectFill"></u-avatar></view>
-			</u-col>
-			<u-col span="6">
-				<view style="font-weight: 700;" v-if="account">{{ nickName }}</view>
-				<view style="font-weight: 700;" v-else @click="login()">登录</view>
-			</u-col>
-			<u-col span="4">
-				<view v-if="account" style="display: flex;" @click="editInfo">
-					<u-icon name="edit-pen" color="#F1F1F1" size="16"></u-icon>
-					<view style="font-size: 14px;">编辑信息</view>
+			<!-- 名字 -->
+			<u-row customStyle="margin-bottom: 10px;color: #F1F1F1;">
+				<u-col span="3">
+					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="55" mode="aspectFill"></u-avatar></view>
+				</u-col>
+				<u-col span="6">
+					<view style="font-weight: 700;" v-if="account">{{ nickName }}</view>
+					<view style="font-weight: 700;" v-else @click="login()">登录</view>
+				</u-col>
+				<u-col span="4">
+					<view v-if="account" style="display: flex;" @click="editInfo">
+						<u-icon name="edit-pen" color="#F1F1F1" size="16"></u-icon>
+						<view style="font-size: 14px;">编辑信息</view>
+					</view>
+				</u-col>
+			</u-row>
+
+			<!-- 个人信息 -->
+			<view class="info" v-if="account">
+				<view>
+					<view>19</view>
+					<view style="font-size: 12px;">年级</view>
 				</view>
-			</u-col>
-		</u-row>
-
-		<!-- 个人信息 -->
-		<view class="info" v-if="account">
-			<view>
-				<view>19</view>
-				<view style="font-size: 12px;">年级</view>
+				<view>
+					<view>19053158</view>
+					<view style="font-size: 12px;">账号</view>
+				</view>
+				<view>
+					<view>学生</view>
+					<view style="font-size: 12px;">职位</view>
+				</view>
 			</view>
-			<view>
-				<view>19053158</view>
-				<view style="font-size: 12px;">账号</view>
-			</view>
-			<view>
-				<view>学生</view>
-				<view style="font-size: 12px;">职位</view>
-			</view>
-		</view>
-		<!-- list -->
-		<view class="contain">
-			<view class="">
-				<u-row customStyle="margin-bottom: 10px">
-					<u-col span="10"><view class="demo-layout bg-purple-dark">1</view></u-col>
-					<u-col span="1"><view class="demo-layout bg-purple-dark">2</view></u-col>
-				</u-row>
+			<!-- list -->
+			<view class="contain">
+				<view class="contain_bg">
+					<view>
+						<view>我的信息</view>
+						<view>></view>
+					</view>
+					<view>
+						<view>操作记录</view>
+						<view>></view>
+					</view>
+					<view>
+						<view>休假申请</view>
+						<view>></view>
+					</view>
+					<view>
+						<view>休假申请</view>
+						<view>></view>
+					</view>
+					<view>
+						<view>顶顶顶顶</view>
+						<view>></view>
+					</view>
+					<view>
+						<view>联系我们</view>
+						<view>></view>
+					</view>
+					<view>
+						<view>信息反馈</view>
+						<view>></view>
+					</view>
+					<view>
+						<view>系统介绍</view>
+						<view>></view>
+					</view>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -51,14 +81,15 @@
 export default {
 	data() {
 		return {
+			windowHeight: 0,
 			titleHeight: 50,
 			isLogin: false,
 			avatar: '',
-			nickName: '',
-			account: '',
-			grade: '',
-			role: '',
-			show:false
+			nickName: '李河东',
+			account: '19053158',
+			grade: '19级',
+			role: '管理员',
+			show: false,
 		};
 	},
 	onLoad() {
@@ -74,10 +105,10 @@ export default {
 			this.titleHeight = res.top;
 		},
 
-		// 检测是否登录过 openid是否存在
+		// 检测是否登录过 openId是否存在
 		WechatisLogin() {
 			uni.getStorage({
-				key: 'openid',
+				key: 'openId',
 				success: res => {
 					this.isLogin = true;
 				}
@@ -85,24 +116,29 @@ export default {
 		},
 		// 跳转登录页
 		login() {
+			// #ifdef MP-WEIXIN
 			uni.navigateTo({
 				url: '../wechatLogin/wechatLogin'
 			});
 			this.wechatLogin();
+			// #endif
+			uni.navigateTo({
+				url: '../appLogin/appLogin'
+			});
 		},
-		// 微信登录获取openid
+		// 微信登录获取openId
 		wechatLogin() {
 			uni.getUserProfile({
 				desc: '微信授权登录',
 				success: res => {
-					uni.$emit('login')
+					uni.$emit('login');
 				},
-				fail: err =>{
+				fail: err => {
 					// 用户拒绝微信授权
-					uni.$emit('rejectLogin')
+					uni.$emit('rejectLogin');
 				}
 			});
-			// 获取openid
+			// 获取openId
 			uni.login({
 				timeout: 10000,
 				provider: 'weixin',
@@ -116,16 +152,15 @@ export default {
 							js_code: res.code
 						},
 						success: res => {
-							console.log('用户的openid:' + res.data.openid);
 							uni.setStorage({
-								key: 'openid',
+								key: 'openId',
 								data: res.data.openid
 							});
 						}
 					});
 				},
 				fail: err => {
-					console.log('获取openid失败' + err);
+					console.log('获取openId失败' + err);
 				}
 			});
 		},
@@ -138,6 +173,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bgColor {
+	height: 100%;
+	background-color: #edf2f7;
+}
 .bg {
 	width: 100%;
 	height: 600rpx;
@@ -165,6 +204,45 @@ export default {
 	text-align: center;
 }
 .contain {
-	margin-top: 500rpx;
+	box-shadow: 3.4px 3.4px 2.7px rgba(0, 0, 0, 0.006);
+	margin-top: 40rpx;
+	width: 100%;
+	> .contain_bg {
+		background-color: #fff;
+		width: 94%;
+		margin-left: 3%;
+		border-radius: 50rpx;
+		display: flex;
+		flex-direction: column;
+		height: 600rpx;
+		> view {
+			display: flex;
+			
+			height: 80rpx;
+			border-bottom: 1px solid #f5f5f5;
+			align-items: center;
+			> view {
+				&:first-child {
+					margin-left: 60rpx;
+				}
+				&:last-child {
+					margin-left: 450rpx;
+					//margin-right: 40rpx;
+				}
+			}
+			&:active {
+				background-color: #ebeaea;
+			}
+			&:nth-child(1) {
+				border-top-left-radius: 50rpx;
+				border-top-right-radius: 50rpx;
+			}
+			&:nth-child(8) {
+				border: none;
+				border-bottom-left-radius: 50rpx;
+				border-bottom-right-radius: 50rpx;
+			}
+		}
+	}
 }
 </style>

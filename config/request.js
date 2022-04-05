@@ -1,6 +1,6 @@
 module.exports = (vm) => {
     uni.$u.http.setConfig((config) => {
-        config.baseURL = 'https://console-mock.apipost.cn/app/mock/project/9de8c14c-bd63-415e-ef97-9c2169cfa844'; /* 根域名 */
+        config.baseURL = 'http://113.78.186.19:9568'; /* 根域名 */
         return config
     })
 	
@@ -20,9 +20,10 @@ module.exports = (vm) => {
 	// 响应拦截
 	uni.$u.http.interceptors.response.use((response) => { 
 		const data = response.data
+		console.log(data)
 		// 自定义参数
 		const custom = response.config?.custom
-		if (data.code !== 200) { 
+		if (data.code !== '') { 
 			// 如果没有显式定义custom的toast参数为false的话，默认对报错进行toast弹出提示
 			if (custom.toast !== false) {
 				uni.$u.toast(data.message)

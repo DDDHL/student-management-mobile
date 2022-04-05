@@ -6,9 +6,16 @@
 </template>
 
 <script>
+import { login } from '../../config/api.js';
 export default {
 	data() {
 		return {
+			query: {
+				userAccount: '',
+				password: '',
+				openId: '',
+				rememberMe: false
+			},
 		};
 	},
 	onLoad() {
@@ -26,9 +33,12 @@ export default {
 
 		// 用户同意微信授权
 		uni.$on('login', () => {
-			this.isSuccess = true
+			// this.query.openId = uni.getStorageSync('openId');
+			// login(this.query).then((res)=>{
+			// 	console.log(res)
+			// })
 			uni.reLaunch({
-				url:'../appLogin/appLogin'
+				url:'../appLogin/appLogin?text=绑定账号'
 			})
 		});
 	},
@@ -37,7 +47,7 @@ export default {
 		goback() {
 			uni.switchTab({
 				url:'../user/user'
-			})();
+			});
 		}
 	},
 	onUnload() {

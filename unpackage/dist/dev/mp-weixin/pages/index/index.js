@@ -128,14 +128,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 36));
-
-
-
-
-
-
-var _api = __webpack_require__(/*! ../../config/api.js */ 145);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+var _default =
 {
   data: function data() {
     return {};
@@ -145,14 +144,7 @@ var _api = __webpack_require__(/*! ../../config/api.js */ 145);function _interop
   onLoad: function onLoad() {
     this.test();
   },
-  methods: {
-    test: function test() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                (0, _api.getMenu)({ custom: { auth: false } }).then(function (res) {
-                  console.log(res);
-                }).catch(function (err) {
-                  console.log(err);
-                });case 1:case "end":return _context.stop();}}}, _callee);}))();
-    } } };exports.default = _default;
+  methods: {} };exports.default = _default;
 
 /***/ })
 

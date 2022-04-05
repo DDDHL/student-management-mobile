@@ -5,7 +5,6 @@
 </template>
 
 <script>
-	import { getMenu } from '../../config/api.js';
 	export default {
 		data() {
 			return {
@@ -16,13 +15,7 @@
 			this.test()
 		},
 		methods: {
-			async test(){
-				getMenu({ custom: { auth: false }}).then((res) => {
-					console.log(res)
-				}).catch((err) =>{
-					console.log(err)
-				})
-			}
+			
 		}
 	}
 </script>
