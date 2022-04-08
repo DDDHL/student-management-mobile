@@ -17983,7 +17983,11 @@ platform;exports.default = _default;
 /* 174 */,
 /* 175 */,
 /* 176 */,
-/* 177 */
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */
 /*!*******************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/config/api.js ***!
   \*******************************************************/
@@ -17998,13 +18002,13 @@ var login = function login(params) {return http.post('/admin/login', params);};e
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
 /* 182 */,
 /* 183 */,
-/* 184 */
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */
 /*!*********************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/utils/secret.js ***!
   \*********************************************************/
@@ -18012,7 +18016,7 @@ var login = function login(params) {return http.post('/admin/login', params);};e
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.Encrypt = Encrypt;exports.Decrypt = Decrypt;var _cryptoJs = _interopRequireDefault(__webpack_require__(/*! crypto-js */ 185));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.Encrypt = Encrypt;exports.Decrypt = Decrypt;var _cryptoJs = _interopRequireDefault(__webpack_require__(/*! crypto-js */ 189));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 默认的 KEY 与 iv 如果没有给
 var KEY = _cryptoJs.default.enc.Utf8.parse("Nw55gagpJojQC8iq");
@@ -18064,7 +18068,7 @@ function Decrypt(word, keyStr, ivStr) {
 }
 
 /***/ }),
-/* 185 */
+/* 189 */
 /*!*************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/index.js ***!
   \*************************************************************************/
@@ -18074,7 +18078,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./x64-core */ 188), __webpack_require__(/*! ./lib-typedarrays */ 189), __webpack_require__(/*! ./enc-utf16 */ 190), __webpack_require__(/*! ./enc-base64 */ 191), __webpack_require__(/*! ./enc-base64url */ 192), __webpack_require__(/*! ./md5 */ 193), __webpack_require__(/*! ./sha1 */ 194), __webpack_require__(/*! ./sha256 */ 195), __webpack_require__(/*! ./sha224 */ 196), __webpack_require__(/*! ./sha512 */ 197), __webpack_require__(/*! ./sha384 */ 198), __webpack_require__(/*! ./sha3 */ 199), __webpack_require__(/*! ./ripemd160 */ 200), __webpack_require__(/*! ./hmac */ 201), __webpack_require__(/*! ./pbkdf2 */ 202), __webpack_require__(/*! ./evpkdf */ 203), __webpack_require__(/*! ./cipher-core */ 204), __webpack_require__(/*! ./mode-cfb */ 205), __webpack_require__(/*! ./mode-ctr */ 206), __webpack_require__(/*! ./mode-ctr-gladman */ 207), __webpack_require__(/*! ./mode-ofb */ 208), __webpack_require__(/*! ./mode-ecb */ 209), __webpack_require__(/*! ./pad-ansix923 */ 210), __webpack_require__(/*! ./pad-iso10126 */ 211), __webpack_require__(/*! ./pad-iso97971 */ 212), __webpack_require__(/*! ./pad-zeropadding */ 213), __webpack_require__(/*! ./pad-nopadding */ 214), __webpack_require__(/*! ./format-hex */ 215), __webpack_require__(/*! ./aes */ 216), __webpack_require__(/*! ./tripledes */ 217), __webpack_require__(/*! ./rc4 */ 218), __webpack_require__(/*! ./rabbit */ 219), __webpack_require__(/*! ./rabbit-legacy */ 220));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./x64-core */ 192), __webpack_require__(/*! ./lib-typedarrays */ 193), __webpack_require__(/*! ./enc-utf16 */ 194), __webpack_require__(/*! ./enc-base64 */ 195), __webpack_require__(/*! ./enc-base64url */ 196), __webpack_require__(/*! ./md5 */ 197), __webpack_require__(/*! ./sha1 */ 198), __webpack_require__(/*! ./sha256 */ 199), __webpack_require__(/*! ./sha224 */ 200), __webpack_require__(/*! ./sha512 */ 201), __webpack_require__(/*! ./sha384 */ 202), __webpack_require__(/*! ./sha3 */ 203), __webpack_require__(/*! ./ripemd160 */ 204), __webpack_require__(/*! ./hmac */ 205), __webpack_require__(/*! ./pbkdf2 */ 206), __webpack_require__(/*! ./evpkdf */ 207), __webpack_require__(/*! ./cipher-core */ 208), __webpack_require__(/*! ./mode-cfb */ 209), __webpack_require__(/*! ./mode-ctr */ 210), __webpack_require__(/*! ./mode-ctr-gladman */ 211), __webpack_require__(/*! ./mode-ofb */ 212), __webpack_require__(/*! ./mode-ecb */ 213), __webpack_require__(/*! ./pad-ansix923 */ 214), __webpack_require__(/*! ./pad-iso10126 */ 215), __webpack_require__(/*! ./pad-iso97971 */ 216), __webpack_require__(/*! ./pad-zeropadding */ 217), __webpack_require__(/*! ./pad-nopadding */ 218), __webpack_require__(/*! ./format-hex */ 219), __webpack_require__(/*! ./aes */ 220), __webpack_require__(/*! ./tripledes */ 221), __webpack_require__(/*! ./rc4 */ 222), __webpack_require__(/*! ./rabbit */ 223), __webpack_require__(/*! ./rabbit-legacy */ 224));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -18084,7 +18088,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 186 */
+/* 190 */
 /*!************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/core.js ***!
   \************************************************************************/
@@ -18136,7 +18140,7 @@ function Decrypt(word, keyStr, ivStr) {
     // Native crypto import via require (NodeJS)
     if (!crypto && "function" === 'function') {
       try {
-        crypto = __webpack_require__(/*! crypto */ 187);
+        crypto = __webpack_require__(/*! crypto */ 191);
       } catch (err) {}
     }
 
@@ -18894,7 +18898,7 @@ function Decrypt(word, keyStr, ivStr) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../kaifa/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 2)))
 
 /***/ }),
-/* 187 */
+/* 191 */
 /*!************************!*\
   !*** crypto (ignored) ***!
   \************************/
@@ -18904,7 +18908,7 @@ function Decrypt(word, keyStr, ivStr) {
 /* (ignored) */
 
 /***/ }),
-/* 188 */
+/* 192 */
 /*!****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/x64-core.js ***!
   \****************************************************************************/
@@ -18914,7 +18918,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -19210,7 +19214,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 189 */
+/* 193 */
 /*!***********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/lib-typedarrays.js ***!
   \***********************************************************************************/
@@ -19220,7 +19224,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -19288,7 +19292,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 190 */
+/* 194 */
 /*!*****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/enc-utf16.js ***!
   \*****************************************************************************/
@@ -19298,7 +19302,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -19439,7 +19443,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 191 */
+/* 195 */
 /*!******************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/enc-base64.js ***!
   \******************************************************************************/
@@ -19449,7 +19453,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -19577,7 +19581,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 192 */
+/* 196 */
 /*!*********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/enc-base64url.js ***!
   \*********************************************************************************/
@@ -19587,7 +19591,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -19719,7 +19723,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 193 */
+/* 197 */
 /*!***********************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/md5.js ***!
   \***********************************************************************/
@@ -19729,7 +19733,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -19989,7 +19993,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 194 */
+/* 198 */
 /*!************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/sha1.js ***!
   \************************************************************************/
@@ -19999,7 +20003,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -20141,7 +20145,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 195 */
+/* 199 */
 /*!**************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/sha256.js ***!
   \**************************************************************************/
@@ -20151,7 +20155,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -20342,7 +20346,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 196 */
+/* 200 */
 /*!**************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/sha224.js ***!
   \**************************************************************************/
@@ -20352,7 +20356,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./sha256 */ 195));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./sha256 */ 199));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -20424,7 +20428,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 197 */
+/* 201 */
 /*!**************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/sha512.js ***!
   \**************************************************************************/
@@ -20434,7 +20438,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./x64-core */ 188));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./x64-core */ 192));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -20752,7 +20756,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 198 */
+/* 202 */
 /*!**************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/sha384.js ***!
   \**************************************************************************/
@@ -20762,7 +20766,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./x64-core */ 188), __webpack_require__(/*! ./sha512 */ 197));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./x64-core */ 192), __webpack_require__(/*! ./sha512 */ 201));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -20837,7 +20841,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 199 */
+/* 203 */
 /*!************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/sha3.js ***!
   \************************************************************************/
@@ -20847,7 +20851,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./x64-core */ 188));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./x64-core */ 192));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -21165,7 +21169,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 200 */
+/* 204 */
 /*!*****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/ripemd160.js ***!
   \*****************************************************************************/
@@ -21175,7 +21179,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -21434,7 +21438,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 201 */
+/* 205 */
 /*!************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/hmac.js ***!
   \************************************************************************/
@@ -21444,7 +21448,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -21579,7 +21583,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 202 */
+/* 206 */
 /*!**************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/pbkdf2.js ***!
   \**************************************************************************/
@@ -21589,7 +21593,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./sha1 */ 194), __webpack_require__(/*! ./hmac */ 201));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./sha1 */ 198), __webpack_require__(/*! ./hmac */ 205));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -21726,7 +21730,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 203 */
+/* 207 */
 /*!**************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/evpkdf.js ***!
   \**************************************************************************/
@@ -21736,7 +21740,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./sha1 */ 194), __webpack_require__(/*! ./hmac */ 201));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./sha1 */ 198), __webpack_require__(/*! ./hmac */ 205));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -21862,7 +21866,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 204 */
+/* 208 */
 /*!*******************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/cipher-core.js ***!
   \*******************************************************************************/
@@ -21872,7 +21876,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./evpkdf */ 203));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./evpkdf */ 207));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -22754,7 +22758,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 205 */
+/* 209 */
 /*!****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/mode-cfb.js ***!
   \****************************************************************************/
@@ -22764,7 +22768,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -22836,7 +22840,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 206 */
+/* 210 */
 /*!****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/mode-ctr.js ***!
   \****************************************************************************/
@@ -22846,7 +22850,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -22896,7 +22900,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 207 */
+/* 211 */
 /*!************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/mode-ctr-gladman.js ***!
   \************************************************************************************/
@@ -22906,7 +22910,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23014,7 +23018,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 208 */
+/* 212 */
 /*!****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/mode-ofb.js ***!
   \****************************************************************************/
@@ -23024,7 +23028,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23070,7 +23074,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 209 */
+/* 213 */
 /*!****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/mode-ecb.js ***!
   \****************************************************************************/
@@ -23080,7 +23084,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23112,7 +23116,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 210 */
+/* 214 */
 /*!********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/pad-ansix923.js ***!
   \********************************************************************************/
@@ -23122,7 +23126,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23163,7 +23167,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 211 */
+/* 215 */
 /*!********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/pad-iso10126.js ***!
   \********************************************************************************/
@@ -23173,7 +23177,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23209,7 +23213,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 212 */
+/* 216 */
 /*!********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/pad-iso97971.js ***!
   \********************************************************************************/
@@ -23219,7 +23223,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23251,7 +23255,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 213 */
+/* 217 */
 /*!***********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/pad-zeropadding.js ***!
   \***********************************************************************************/
@@ -23261,7 +23265,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23300,7 +23304,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 214 */
+/* 218 */
 /*!*********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/pad-nopadding.js ***!
   \*********************************************************************************/
@@ -23310,7 +23314,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23332,7 +23336,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 215 */
+/* 219 */
 /*!******************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/format-hex.js ***!
   \******************************************************************************/
@@ -23342,7 +23346,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23400,7 +23404,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 216 */
+/* 220 */
 /*!***********************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/aes.js ***!
   \***********************************************************************/
@@ -23410,7 +23414,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./enc-base64 */ 191), __webpack_require__(/*! ./md5 */ 193), __webpack_require__(/*! ./evpkdf */ 203), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./enc-base64 */ 195), __webpack_require__(/*! ./md5 */ 197), __webpack_require__(/*! ./evpkdf */ 207), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -23636,7 +23640,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 217 */
+/* 221 */
 /*!*****************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/tripledes.js ***!
   \*****************************************************************************/
@@ -23646,7 +23650,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./enc-base64 */ 191), __webpack_require__(/*! ./md5 */ 193), __webpack_require__(/*! ./evpkdf */ 203), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./enc-base64 */ 195), __webpack_require__(/*! ./md5 */ 197), __webpack_require__(/*! ./evpkdf */ 207), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -24417,7 +24421,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 218 */
+/* 222 */
 /*!***********************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/rc4.js ***!
   \***********************************************************************/
@@ -24427,7 +24431,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./enc-base64 */ 191), __webpack_require__(/*! ./md5 */ 193), __webpack_require__(/*! ./evpkdf */ 203), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./enc-base64 */ 195), __webpack_require__(/*! ./md5 */ 197), __webpack_require__(/*! ./evpkdf */ 207), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -24558,7 +24562,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 219 */
+/* 223 */
 /*!**************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/rabbit.js ***!
   \**************************************************************************/
@@ -24568,7 +24572,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./enc-base64 */ 191), __webpack_require__(/*! ./md5 */ 193), __webpack_require__(/*! ./evpkdf */ 203), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./enc-base64 */ 195), __webpack_require__(/*! ./md5 */ 197), __webpack_require__(/*! ./evpkdf */ 207), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -24752,7 +24756,7 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 220 */
+/* 224 */
 /*!*********************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/crypto-js/rabbit-legacy.js ***!
   \*********************************************************************************/
@@ -24762,7 +24766,7 @@ function Decrypt(word, keyStr, ivStr) {
 ;(function (root, factory, undef) {
   if (true) {
     // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 186), __webpack_require__(/*! ./enc-base64 */ 191), __webpack_require__(/*! ./md5 */ 193), __webpack_require__(/*! ./evpkdf */ 203), __webpack_require__(/*! ./cipher-core */ 204));
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 190), __webpack_require__(/*! ./enc-base64 */ 195), __webpack_require__(/*! ./md5 */ 197), __webpack_require__(/*! ./evpkdf */ 207), __webpack_require__(/*! ./cipher-core */ 208));
   } else
   {}
 })(this, function (CryptoJS) {
@@ -24944,94 +24948,16 @@ function Decrypt(word, keyStr, ivStr) {
 });
 
 /***/ }),
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
 /* 225 */,
 /* 226 */,
 /* 227 */,
-/* 228 */
-/*!*****************************************************************************************!*\
-  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-row/props.js ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 给col添加间距，左右边距各占一半
-    gutter: {
-      type: [String, Number],
-      default: uni.$u.props.row.gutter },
-
-    // 水平排列方式，可选值为`start`(或`flex-start`)、`end`(或`flex-end`)、`center`、`around`(或`space-around`)、`between`(或`space-between`)
-    justify: {
-      type: String,
-      default: uni.$u.props.row.justify },
-
-    // 垂直对齐方式，可选值为top、center、bottom
-    align: {
-      type: String,
-      default: uni.$u.props.row.align } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
+/* 228 */,
 /* 229 */,
 /* 230 */,
 /* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */
-/*!*****************************************************************************************!*\
-  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-col/props.js ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 占父容器宽度的多少等分，总分为12份
-    span: {
-      type: [String, Number],
-      default: uni.$u.props.col.span },
-
-    // 指定栅格左侧的间隔数(总12栏)
-    offset: {
-      type: [String, Number],
-      default: uni.$u.props.col.offset },
-
-    // 水平排列方式，可选值为`start`(或`flex-start`)、`end`(或`flex-end`)、`center`、`around`(或`space-around`)、`between`(或`space-between`)
-    justify: {
-      type: String,
-      default: uni.$u.props.col.justify },
-
-    // 垂直对齐方式，可选值为top、center、bottom、stretch
-    align: {
-      type: String,
-      default: uni.$u.props.col.align },
-
-    // 文字对齐方式
-    textAlign: {
-      type: String,
-      default: uni.$u.props.col.textAlign } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */
+/* 232 */
 /*!********************************************************************************************!*\
-  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-avatar/props.js ***!
+  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-swiper/props.js ***!
   \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -25039,90 +24965,137 @@ function Decrypt(word, keyStr, ivStr) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   props: {
-    // 头像图片路径(不能为相对路径)
-    src: {
-      type: String,
-      default: uni.$u.props.avatar.src },
+    // 列表数组，元素可为字符串，如为对象可通过keyName指定目标属性名
+    list: {
+      type: Array,
+      default: uni.$u.props.swiper.list },
 
-    // 头像形状，circle-圆形，square-方形
-    shape: {
-      type: String,
-      default: uni.$u.props.avatar.shape },
+    // 是否显示面板指示器
+    indicator: {
+      type: Boolean,
+      default: uni.$u.props.swiper.indicator },
 
-    // 头像尺寸
-    size: {
+    // 指示器非激活颜色
+    indicatorActiveColor: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorActiveColor },
+
+    // 指示器的激活颜色
+    indicatorInactiveColor: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorInactiveColor },
+
+    // 指示器样式，可通过bottom，left，right进行定位
+    indicatorStyle: {
+      type: [String, Object],
+      default: uni.$u.props.swiper.indicatorStyle },
+
+    // 指示器模式，line-线型，dot-点型
+    indicatorMode: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorMode },
+
+    // 是否自动切换
+    autoplay: {
+      type: Boolean,
+      default: uni.$u.props.swiper.autoplay },
+
+    // 当前所在滑块的 index
+    current: {
       type: [String, Number],
-      default: uni.$u.props.avatar.size },
+      default: uni.$u.props.swiper.current },
 
-    // 裁剪模式
-    mode: {
+    // 当前所在滑块的 item-id ，不能与 current 被同时指定
+    currentItemId: {
       type: String,
-      default: uni.$u.props.avatar.mode },
+      default: uni.$u.props.swiper.currentItemId },
 
-    // 显示的文字
-    text: {
+    // 滑块自动切换时间间隔
+    interval: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.interval },
+
+    // 滑块切换过程所需时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.duration },
+
+    // 播放到末尾后是否重新回到开头
+    circular: {
+      type: Boolean,
+      default: uni.$u.props.swiper.circular },
+
+    // 前边距，可用于露出前一项的一小部分，nvue和支付宝不支持
+    previousMargin: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.previousMargin },
+
+    // 后边距，可用于露出后一项的一小部分，nvue和支付宝不支持
+    nextMargin: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.nextMargin },
+
+    // 当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持
+    acceleration: {
+      type: Boolean,
+      default: uni.$u.props.swiper.acceleration },
+
+    // 同时显示的滑块数量，nvue、支付宝小程序不支持
+    displayMultipleItems: {
+      type: Number,
+      default: uni.$u.props.swiper.displayMultipleItems },
+
+    // 指定swiper切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic
+    // 只对微信小程序有效
+    easingFunction: {
       type: String,
-      default: uni.$u.props.avatar.text },
+      default: uni.$u.props.swiper.easingFunction },
 
-    // 背景色
+    // list数组中指定对象的目标属性名
+    keyName: {
+      type: String,
+      default: uni.$u.props.swiper.keyName },
+
+    // 图片的裁剪模式
+    imgMode: {
+      type: String,
+      default: uni.$u.props.swiper.imgMode },
+
+    // 组件高度
+    height: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.height },
+
+    // 背景颜色
     bgColor: {
       type: String,
-      default: uni.$u.props.avatar.bgColor },
+      default: uni.$u.props.swiper.bgColor },
 
-    // 文字颜色
-    color: {
-      type: String,
-      default: uni.$u.props.avatar.color },
-
-    // 文字大小
-    fontSize: {
+    // 组件圆角，数值或带单位的字符串
+    radius: {
       type: [String, Number],
-      default: uni.$u.props.avatar.fontSize },
+      default: uni.$u.props.swiper.radius },
 
-    // 显示的图标
-    icon: {
-      type: String,
-      default: uni.$u.props.avatar.icon },
-
-    // 显示小程序头像，只对百度，微信，QQ小程序有效
-    mpAvatar: {
+    // 是否加载中
+    loading: {
       type: Boolean,
-      default: uni.$u.props.avatar.mpAvatar },
+      default: uni.$u.props.swiper.loading },
 
-    // 是否使用随机背景色
-    randomBgColor: {
+    // 是否显示标题，要求数组对象中有title属性
+    showTitle: {
       type: Boolean,
-      default: uni.$u.props.avatar.randomBgColor },
-
-    // 加载失败的默认头像(组件有内置默认图片)
-    defaultUrl: {
-      type: String,
-      default: uni.$u.props.avatar.defaultUrl },
-
-    // 如果配置了randomBgColor为true，且配置了此值，则从默认的背景色数组中取出对应索引的颜色值，取值0-19之间
-    colorIndex: {
-      type: [String, Number],
-      // 校验参数规则，索引在0-19之间
-      validator: function validator(n) {
-        return uni.$u.test.range(n, [0, 19]) || n === '';
-      },
-      default: uni.$u.props.avatar.colorIndex },
-
-    // 组件标识符
-    name: {
-      type: String,
-      default: uni.$u.props.avatar.name } } };exports.default = _default;
+      default: uni.$u.props.swiper.showTitle } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */
 /*!******************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-icon/icons.js ***!
   \******************************************************************************************/
@@ -25345,7 +25318,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 253 */
+/* 241 */
 /*!******************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-icon/props.js ***!
   \******************************************************************************************/
@@ -25442,14 +25415,185 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */
+/*!*****************************************************************************************!*\
+  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-row/props.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 给col添加间距，左右边距各占一半
+    gutter: {
+      type: [String, Number],
+      default: uni.$u.props.row.gutter },
+
+    // 水平排列方式，可选值为`start`(或`flex-start`)、`end`(或`flex-end`)、`center`、`around`(或`space-around`)、`between`(或`space-between`)
+    justify: {
+      type: String,
+      default: uni.$u.props.row.justify },
+
+    // 垂直对齐方式，可选值为top、center、bottom
+    align: {
+      type: String,
+      default: uni.$u.props.row.align } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
 /* 254 */,
 /* 255 */,
 /* 256 */,
-/* 257 */,
+/* 257 */
+/*!*****************************************************************************************!*\
+  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-col/props.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 占父容器宽度的多少等分，总分为12份
+    span: {
+      type: [String, Number],
+      default: uni.$u.props.col.span },
+
+    // 指定栅格左侧的间隔数(总12栏)
+    offset: {
+      type: [String, Number],
+      default: uni.$u.props.col.offset },
+
+    // 水平排列方式，可选值为`start`(或`flex-start`)、`end`(或`flex-end`)、`center`、`around`(或`space-around`)、`between`(或`space-between`)
+    justify: {
+      type: String,
+      default: uni.$u.props.col.justify },
+
+    // 垂直对齐方式，可选值为top、center、bottom、stretch
+    align: {
+      type: String,
+      default: uni.$u.props.col.align },
+
+    // 文字对齐方式
+    textAlign: {
+      type: String,
+      default: uni.$u.props.col.textAlign } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 258 */,
 /* 259 */,
 /* 260 */,
-/* 261 */
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */
+/*!********************************************************************************************!*\
+  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-avatar/props.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 头像图片路径(不能为相对路径)
+    src: {
+      type: String,
+      default: uni.$u.props.avatar.src },
+
+    // 头像形状，circle-圆形，square-方形
+    shape: {
+      type: String,
+      default: uni.$u.props.avatar.shape },
+
+    // 头像尺寸
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.avatar.size },
+
+    // 裁剪模式
+    mode: {
+      type: String,
+      default: uni.$u.props.avatar.mode },
+
+    // 显示的文字
+    text: {
+      type: String,
+      default: uni.$u.props.avatar.text },
+
+    // 背景色
+    bgColor: {
+      type: String,
+      default: uni.$u.props.avatar.bgColor },
+
+    // 文字颜色
+    color: {
+      type: String,
+      default: uni.$u.props.avatar.color },
+
+    // 文字大小
+    fontSize: {
+      type: [String, Number],
+      default: uni.$u.props.avatar.fontSize },
+
+    // 显示的图标
+    icon: {
+      type: String,
+      default: uni.$u.props.avatar.icon },
+
+    // 显示小程序头像，只对百度，微信，QQ小程序有效
+    mpAvatar: {
+      type: Boolean,
+      default: uni.$u.props.avatar.mpAvatar },
+
+    // 是否使用随机背景色
+    randomBgColor: {
+      type: Boolean,
+      default: uni.$u.props.avatar.randomBgColor },
+
+    // 加载失败的默认头像(组件有内置默认图片)
+    defaultUrl: {
+      type: String,
+      default: uni.$u.props.avatar.defaultUrl },
+
+    // 如果配置了randomBgColor为true，且配置了此值，则从默认的背景色数组中取出对应索引的颜色值，取值0-19之间
+    colorIndex: {
+      type: [String, Number],
+      // 校验参数规则，索引在0-19之间
+      validator: function validator(n) {
+        return uni.$u.test.range(n, [0, 19]) || n === '';
+      },
+      default: uni.$u.props.avatar.colorIndex },
+
+    // 组件标识符
+    name: {
+      type: String,
+      default: uni.$u.props.avatar.name } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */
 /*!**************************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-loading-page/props.js ***!
   \**************************************************************************************************/
@@ -25501,14 +25645,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */
 /*!********************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-notify/props.js ***!
   \********************************************************************************************/
@@ -25565,14 +25709,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */
 /*!*******************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-image/props.js ***!
   \*******************************************************************************************/
@@ -25664,12 +25808,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */
 /*!*******************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-input/props.js ***!
   \*******************************************************************************************/
@@ -25859,12 +26003,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */
 /*!************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/libs/mixin/button.js ***!
   \************************************************************************************/
@@ -25885,7 +26029,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     openType: String } };exports.default = _default;
 
 /***/ }),
-/* 290 */
+/* 302 */
 /*!**************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/libs/mixin/openType.js ***!
   \**************************************************************************************/
@@ -25918,7 +26062,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 291 */
+/* 303 */
 /*!********************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-button/props.js ***!
   \********************************************************************************************/
@@ -26087,14 +26231,132 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */
+/*!**************************************************************************************************!*\
+  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-loading-icon/props.js ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.show },
+
+    // 颜色
+    color: {
+      type: String,
+      default: uni.$u.props.loadingIcon.color },
+
+    // 提示文字颜色
+    textColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.textColor },
+
+    // 文字和图标是否垂直排列
+    vertical: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.vertical },
+
+    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
+    mode: {
+      type: String,
+      default: uni.$u.props.loadingIcon.mode },
+
+    // 图标大小，单位默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.size },
+
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.textSize },
+
+    // 文字内容
+    text: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.text },
+
+    // 动画模式
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.loadingIcon.timingFunction },
+
+    // 动画执行周期时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.duration },
+
+    // mode=circle时的暗边颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */
+/*!******************************************************************************************************!*\
+  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-swiper-indicator/props.js ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 轮播的长度
+    length: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.length },
+
+    // 当前处于活动状态的轮播的索引
+    current: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.current },
+
+    // 指示器非激活颜色
+    indicatorActiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorActiveColor },
+
+    // 指示器的激活颜色
+    indicatorInactiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorInactiveColor },
+
+    // 指示器模式，line-线型，dot-点型
+    indicatorMode: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorMode } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */
 /*!******************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-text/props.js ***!
   \******************************************************************************************/
@@ -26212,12 +26474,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */
 /*!************************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-transition/props.js ***!
   \************************************************************************************************/
@@ -26249,7 +26511,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 306 */
+/* 334 */
 /*!*****************************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-transition/transition.js ***!
   \*****************************************************************************************************/
@@ -26260,7 +26522,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 36));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 307));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 335));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -26412,7 +26674,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 307 */
+/* 335 */
 /*!*******************************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \*******************************************************************************************************/
@@ -26488,88 +26750,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */
-/*!**************************************************************************************************!*\
-  !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-loading-icon/props.js ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.show },
-
-    // 颜色
-    color: {
-      type: String,
-      default: uni.$u.props.loadingIcon.color },
-
-    // 提示文字颜色
-    textColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.textColor },
-
-    // 文字和图标是否垂直排列
-    vertical: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.vertical },
-
-    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
-    mode: {
-      type: String,
-      default: uni.$u.props.loadingIcon.mode },
-
-    // 图标大小，单位默认px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.size },
-
-    // 文字大小
-    textSize: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.textSize },
-
-    // 文字内容
-    text: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.text },
-
-    // 动画模式
-    timingFunction: {
-      type: String,
-      default: uni.$u.props.loadingIcon.timingFunction },
-
-    // 动画执行周期时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.duration },
-
-    // mode=circle时的暗边颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */
 /*!************************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-status-bar/props.js ***!
   \************************************************************************************************/
@@ -26585,28 +26773,28 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
 /* 344 */,
-/* 345 */
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */
 /*!******************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-text/value.js ***!
   \******************************************************************************************/
@@ -26700,14 +26888,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */
 /*!******************************************************************************************!*\
   !*** D:/Hbuilder_project/新建文件夹/student/node_modules/uview-ui/components/u-link/props.js ***!
   \******************************************************************************************/

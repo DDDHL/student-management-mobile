@@ -1,5 +1,4 @@
 {
-  "navigationBarTitleText": "请假",
-  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
   "usingComponents": {}
 }

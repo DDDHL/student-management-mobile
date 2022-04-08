@@ -24,11 +24,11 @@
 			<!-- 个人信息 -->
 			<view class="info" v-if="account">
 				<view>
-					<view>19</view>
+					<view>{{grade}}</view>
 					<view style="font-size: 12px;">年级</view>
 				</view>
 				<view>
-					<view>19053158</view>
+					<view>{{account}}</view>
 					<view style="font-size: 12px;">账号</view>
 				</view>
 				<view>
@@ -56,9 +56,9 @@ export default {
 			titleHeight: 50,
 			isLogin: false,
 			avatar: '',
-			nickName: '李河东',
-			account: '',
-			grade: '19级',
+			nickName: 'Leander',
+			account: 'XXXXXXX',
+			grade: '777',
 			role: '管理员',
 			options: [
 				{ name: '新华的圈' },

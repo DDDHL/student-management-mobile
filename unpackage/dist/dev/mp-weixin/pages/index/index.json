@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "主页",
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper"
+  }
 }
