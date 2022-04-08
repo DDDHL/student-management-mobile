@@ -19,7 +19,8 @@
 			"path": "pages/service/service",
 			"style": {
 				"navigationBarTitleText": "服务",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#97d9e1"
 			}
 
 		}, {
@@ -35,7 +36,8 @@
 			"path": "pages/userInfo/userInfo",
 			"style": {
 				"navigationBarTitleText": "修改个人信息",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#97d9e1"
 			}
 		},
 		{
@@ -93,9 +95,9 @@
 				"path": "pages/user/user" 
 			},
 			{
-					"name": "appLogin", 
-					"path": "pages/appLogin/appLogin" 
-				}
+					"name": "service", 
+					"path": "pages/service/service" 
+			}
 			
 		]
 	}

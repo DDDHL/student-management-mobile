@@ -39,36 +39,8 @@
 			<!-- list -->
 			<view class="contain">
 				<view class="contain_bg">
-					<view>
-						<view>我的信息</view>
-						<view>></view>
-					</view>
-					<view>
-						<view>操作记录</view>
-						<view>></view>
-					</view>
-					<view>
-						<view>休假申请</view>
-						<view>></view>
-					</view>
-					<view>
-						<view>休假申请</view>
-						<view>></view>
-					</view>
-					<view>
-						<view>顶顶顶顶</view>
-						<view>></view>
-					</view>
-					<view>
-						<view>联系我们</view>
-						<view>></view>
-					</view>
-					<view>
-						<view>信息反馈</view>
-						<view>></view>
-					</view>
-					<view>
-						<view>系统介绍</view>
+					<view v-for="item in options" :key="item.name">
+						<view>{{item.name}}</view>
 						<view>></view>
 					</view>
 				</view>
@@ -81,15 +53,23 @@
 export default {
 	data() {
 		return {
-			windowHeight: 0,
 			titleHeight: 50,
 			isLogin: false,
 			avatar: '',
 			nickName: '李河东',
-			account: '19053158',
+			account: '',
 			grade: '19级',
 			role: '管理员',
-			show: false,
+			options: [
+				{ name: '新华的圈' },
+				{ name: '我的信息' },
+				{ name: '操作记录' },
+				{ name: '休假申请' },
+				{ name: '申请记录' },
+				{ name: '联系我们' },
+				{ name: '信息反馈' },
+				{ name: '系统介绍' }
+			]
 		};
 	},
 	onLoad() {
@@ -175,7 +155,7 @@ export default {
 <style lang="scss" scoped>
 .bgColor {
 	height: 100%;
-	background-color: #edf2f7;
+	background-color: $uni-color-bg;
 }
 .bg {
 	width: 100%;
@@ -204,7 +184,6 @@ export default {
 	text-align: center;
 }
 .contain {
-	box-shadow: 3.4px 3.4px 2.7px rgba(0, 0, 0, 0.006);
 	margin-top: 40rpx;
 	width: 100%;
 	> .contain_bg {
@@ -217,7 +196,7 @@ export default {
 		height: 600rpx;
 		> view {
 			display: flex;
-			
+
 			height: 80rpx;
 			border-bottom: 1px solid #f5f5f5;
 			align-items: center;
@@ -233,11 +212,11 @@ export default {
 			&:active {
 				background-color: #ebeaea;
 			}
-			&:nth-child(1) {
+			&:first-child {
 				border-top-left-radius: 50rpx;
 				border-top-right-radius: 50rpx;
 			}
-			&:nth-child(8) {
+			&:last-child {
 				border: none;
 				border-bottom-left-radius: 50rpx;
 				border-bottom-right-radius: 50rpx;

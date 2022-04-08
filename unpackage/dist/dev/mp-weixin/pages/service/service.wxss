@@ -25,7 +25,27 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.u-status-bar.data-v-3c8c2ae7 {
-  width: 100%;
+.bg.data-v-4c0f6f1c {
+  height: 100%;
+  background-color: #edf2f7;
+}
+.box.data-v-4c0f6f1c {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-left: 4.5vw;
+}
+.box > view.data-v-4c0f6f1c {
+  margin: 20rpx 10rpx 0 10rpx;
+  width: 20vw;
+  height: 20vw;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  box-shadow: 4rpx 4rpx 10rpx #bfbfbf;
 }
 

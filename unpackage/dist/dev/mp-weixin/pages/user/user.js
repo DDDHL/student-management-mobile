@@ -213,47 +213,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
     return {
-      windowHeight: 0,
       titleHeight: 50,
       isLogin: false,
       avatar: '',
       nickName: '李河东',
-      account: '19053158',
+      account: '',
       grade: '19级',
       role: '管理员',
-      show: false };
+      options: [
+      { name: '新华的圈' },
+      { name: '我的信息' },
+      { name: '操作记录' },
+      { name: '休假申请' },
+      { name: '申请记录' },
+      { name: '联系我们' },
+      { name: '信息反馈' },
+      { name: '系统介绍' }] };
+
 
   },
   onLoad: function onLoad() {
