@@ -100,8 +100,8 @@
 				"path": "pages/user/user" 
 			},
 			{
-					"name": "index", 
-					"path": "pages/index/index" 
+					"name": "vaction", 
+					"path": "pages/vaction/vaction" 
 			}
 			
 		]

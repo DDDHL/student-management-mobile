@@ -179,12 +179,12 @@ export default {
 .info {
 	display: flex;
 	justify-content: space-around;
-	margin-top: 140rpx;
+	margin-top: 80rpx;
 	color: $uni-color-white;
 	text-align: center;
 }
 .contain {
-	margin-top: 40rpx;
+	margin-top: 45rpx;
 	width: 100%;
 	> .contain_bg {
 		background-color: #fff;
@@ -206,11 +206,10 @@ export default {
 				}
 				&:last-child {
 					margin-left: 450rpx;
-					//margin-right: 40rpx;
 				}
 			}
 			&:active {
-				background-color: #ebeaea;
+				background-color: #f3f4f6;
 			}
 			&:first-child {
 				border-top-left-radius: 50rpx;

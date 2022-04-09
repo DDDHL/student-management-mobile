@@ -32,9 +32,9 @@
           "pathName": "pages/user/user"
         },
         {
-          "name": "index",
+          "name": "vaction",
           "id": 1,
-          "pathName": "pages/index/index"
+          "pathName": "pages/vaction/vaction"
         }
       ]
     }
