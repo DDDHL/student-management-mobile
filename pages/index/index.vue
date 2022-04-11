@@ -1,7 +1,7 @@
 <template>
-	<view class="bg">
+	<view>
 		<view class="title" :style="'padding-top:' + titleHeight + 'px'">新华的湖</view>
-		<view class="swiper"><u-swiper :list="list3" previousMargin="30" nextMargin="30" circular autoplay interval="3000" radius="5" bgColor="#edf2f7"></u-swiper></view>
+		<view class="swiper"><u-swiper :list="list3" previousMargin="30" nextMargin="30" circular autoplay interval="3000" radius="5"></u-swiper></view>
 	</view>
 </template>
 
@@ -29,10 +29,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg {
-	height: 100%;
-	background-color: $uni-color-bg;
-}
 .title {
 	font-weight: 600;
 	line-height: 30px;

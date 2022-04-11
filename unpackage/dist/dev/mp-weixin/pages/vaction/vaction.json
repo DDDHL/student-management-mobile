@@ -2,6 +2,10 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "u-cell-group": "/node-modules/uview-ui/components/u-cell-group/u-cell-group",
-    "u-cell": "/node-modules/uview-ui/components/u-cell/u-cell"
+    "u-cell": "/node-modules/uview-ui/components/u-cell/u-cell",
+    "u-switch": "/node-modules/uview-ui/components/u-switch/u-switch",
+    "u--textarea": "/node-modules/uview-ui/components/u--textarea/u--textarea",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider"
   }
 }

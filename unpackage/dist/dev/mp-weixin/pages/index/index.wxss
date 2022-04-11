@@ -25,10 +25,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.bg.data-v-57280228 {
-  height: 100%;
-  background-color: #edf2f7;
-}
 .title.data-v-57280228 {
   font-weight: 600;
   line-height: 30px;

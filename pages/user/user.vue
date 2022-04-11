@@ -1,5 +1,5 @@
 <template>
-	<view class="bgColor">
+	<view>
 		<view class="bg">
 			<view class="title" :style="'padding-top:' + titleHeight + 'px'">我的</view>
 			<view class="cu-avatar lg round margin-left margin-top" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
@@ -7,16 +7,16 @@
 			<!-- 名字 -->
 			<u-row customStyle="margin-bottom: 10px;color: #F1F1F1;">
 				<u-col span="3">
-					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="55" mode="aspectFill"></u-avatar></view>
+					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="110rpx" mode="aspectFill"></u-avatar></view>
 				</u-col>
 				<u-col span="6">
-					<view style="font-weight: 700;" v-if="account">{{ nickName }}</view>
+					<view style="font-weight: 700;font-size: 28rpx;" v-if="account">{{ nickName }}</view>
 					<view style="font-weight: 700;" v-else @click="login()">登录</view>
 				</u-col>
 				<u-col span="4">
 					<view v-if="account" style="display: flex;" @click="editInfo">
-						<u-icon name="edit-pen" color="#F1F1F1" size="16"></u-icon>
-						<view style="font-size: 14px;">编辑信息</view>
+						<u-icon name="edit-pen" color="#F1F1F1" size="32rpx"></u-icon>
+						<view style="font-size: 28rpx;">编辑信息</view>
 					</view>
 				</u-col>
 			</u-row>
@@ -24,23 +24,23 @@
 			<!-- 个人信息 -->
 			<view class="info" v-if="account">
 				<view>
-					<view>{{grade}}</view>
-					<view style="font-size: 12px;">年级</view>
+					<view>{{ grade }}</view>
+					<view>年级</view>
 				</view>
 				<view>
-					<view>{{account}}</view>
-					<view style="font-size: 12px;">账号</view>
+					<view>{{ account }}</view>
+					<view>账号</view>
 				</view>
 				<view>
 					<view>学生</view>
-					<view style="font-size: 12px;">职位</view>
+					<view>职位</view>
 				</view>
 			</view>
 			<!-- list -->
 			<view class="contain">
 				<view class="contain_bg">
 					<view v-for="item in options" :key="item.name">
-						<view>{{item.name}}</view>
+						<view>{{ item.name }}</view>
 						<view>></view>
 					</view>
 				</view>
@@ -153,10 +153,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bgColor {
-	height: 100%;
-	background-color: $uni-color-bg;
-}
 .bg {
 	width: 100%;
 	height: 600rpx;
@@ -169,7 +165,7 @@ export default {
 	font-weight: 600;
 	line-height: 30px;
 	margin-left: 40rpx;
-	font-size: 17px;
+	font-size: 35rpx;
 	color: $uni-color-white;
 }
 
@@ -182,6 +178,7 @@ export default {
 	margin-top: 80rpx;
 	color: $uni-color-white;
 	text-align: center;
+	font-size: 24rpx;
 }
 .contain {
 	margin-top: 45rpx;
@@ -193,10 +190,12 @@ export default {
 		border-radius: 50rpx;
 		display: flex;
 		flex-direction: column;
+		font-size: 32rpx;
 		height: 600rpx;
+		box-shadow: 5rpx 5rpx 50rpx #cccccc;
+		margin-bottom: 100rpx;
 		> view {
 			display: flex;
-
 			height: 80rpx;
 			border-bottom: 1px solid #f5f5f5;
 			align-items: center;
