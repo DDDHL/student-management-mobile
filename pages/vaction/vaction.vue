@@ -4,7 +4,6 @@
 		<image src="../../static/vaction_bg.png" mode="aspectFill"></image>
 		<image src="../../static/moyu.gif" mode="aspectFill" :style="'top:' + textTop + 'px;left:' + textLeft * 12 + 'rpx'"></image>
 		<view class="bg_text" :style="'top:' + textTop + 'px;left:' + textLeft + 'px'">上课这么累，我想摸鱼</view>
-
 		<!-- 日历 -->
 		<view class="contain">
 			<view>
