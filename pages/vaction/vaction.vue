@@ -94,12 +94,19 @@ export default {
 				console.log(this.date);
 				console.log(this.reason);
 				console.log(this.checked);
+				this.$refs.uToast.show({
+					type: 'loading',
+					message: '正在提交',
+					complete(){
+						console.log('成功')
+					}
+				});
 			} else {
 				this.$refs.uToast.show({
 					type: 'error',
 					message: '请先填写好表单',
 					complete() {
-						console.log(123)
+						console.log(123);
 					}
 				});
 			}

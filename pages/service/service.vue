@@ -46,6 +46,9 @@ export default {
 		border-radius: 20rpx;
 		font-size: 24rpx;
 		box-shadow: 4rpx 4rpx 10rpx #bfbfbf;
+		&:active{
+			background-color: #f3f4f6;
+		}
 	}
 }
 </style>

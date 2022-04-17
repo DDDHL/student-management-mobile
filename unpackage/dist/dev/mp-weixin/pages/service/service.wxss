@@ -44,4 +44,7 @@
   font-size: 24rpx;
   box-shadow: 4rpx 4rpx 10rpx #bfbfbf;
 }
+.box > view.data-v-4c0f6f1c:active {
+  background-color: #f3f4f6;
+}
 
