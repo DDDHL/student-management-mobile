@@ -1,8 +1,8 @@
 <template>
-	<view class="bg">
+	<view>
 		<view class="box">
 			<view v-for="item in services" :key="item.name">
-				<u-icon :name="item.icon" color="#2979ff" size="28"></u-icon>
+				<u-icon :name="item.icon" color="#2979ff" size="56rpx"></u-icon>
 				<view>{{ item.name }}</view>
 			</view>
 		</view>
@@ -29,10 +29,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg {
-	height: 100%;
-	background-color: $uni-color-bg;
-}
 .box {
 	display: flex;
 	text-align: center;

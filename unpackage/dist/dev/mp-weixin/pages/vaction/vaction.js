@@ -102,16 +102,25 @@ try {
       return Promise.all(/*! import() | node-modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell/u-cell.vue */ 245))
     },
     uSwitch: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-switch/u-switch */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-switch/u-switch")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-switch/u-switch.vue */ 437))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-switch/u-switch */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-switch/u-switch")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-switch/u-switch.vue */ 253))
     },
     "u-Textarea": function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u--textarea/u--textarea */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--textarea/u--textarea")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--textarea/u--textarea.vue */ 428))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u--textarea/u--textarea */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--textarea/u--textarea")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--textarea/u--textarea.vue */ 261))
     },
     uButton: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 253))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 267))
+    },
+    uCalendar: function() {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-calendar/u-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-calendar/u-calendar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-calendar/u-calendar.vue */ 460))
+    },
+    uPicker: function() {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-picker/u-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-picker/u-picker")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-picker/u-picker.vue */ 515))
     },
     uDivider: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-divider/u-divider")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 451))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-divider/u-divider")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 277))
+    },
+    uToast: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-toast/u-toast */ "node-modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! uview-ui/components/u-toast/u-toast.vue */ 533))
     }
   }
 } catch (e) {
@@ -135,6 +144,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.showDayType = !_vm.showDayType
+    }
+
+    _vm.e1 = function($event) {
+      _vm.DateShow = !_vm.DateShow
+    }
+
+    _vm.e2 = function($event) {
+      _vm.DateShow = !_vm.DateShow
+    }
+
+    _vm.e3 = function($event) {
+      _vm.showDayType = !_vm.showDayType
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -202,19 +228,34 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
 var _default =
 {
   data: function data() {
     return {
       textTop: 50,
       textLeft: 20,
-      show: false,
-      date: '2022/4/10',
+      date: '',
+      reason: '',
       checked: true,
-      reason: '' };
+      DateShow: false,
+      showDayType: false,
+      dayType: '连续日期',
+      columns: [['连续日期', '单日']],
+      defaultIndex: 0,
+      DateMode: 'range' };
 
   },
+  watch: {
+    dayType: function dayType(newValue) {
+      if (newValue == '连续日期') {
+        this.DateMode = 'range';
+      }
+      if (newValue == '单日') {
+        this.DateMode = 'single';
+      }
+      this.date = '';
+    } },
+
   onLoad: function onLoad() {
 
     this.getHeight();
@@ -230,8 +271,36 @@ var _default =
       this.checked = !this.checked;
     },
     // 日期
-    selectDate: function selectDate() {},
-    selectTime: function selectTime() {} } };exports.default = _default;
+    // 确定选择日期
+    confirmDate: function confirmDate(e) {
+      this.DateShow = false;
+      if (e.length == 1) {
+        this.date = e[0];
+      } else {
+        this.date = e[0] + ' ~ ' + e[e.length - 1];
+      }
+    },
+    // 确定选择日期类型
+    DayTypeConfirm: function DayTypeConfirm(e) {
+      this.showDayType = false;
+      this.dayType = e.value[0];
+    },
+    // 提交
+    submit: function submit() {
+      if (this.date && this.reason) {
+        console.log(this.date);
+        console.log(this.reason);
+        console.log(this.checked);
+      } else {
+        this.$refs.uToast.show({
+          type: 'error',
+          message: '请先填写好表单',
+          complete: function complete() {
+            console.log(123);
+          } });
+
+      }
+    } } };exports.default = _default;
 
 /***/ }),
 

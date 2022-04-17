@@ -7,29 +7,28 @@
 
 		<!-- 日历 -->
 		<view class="contain">
-			<view class="container">
+			<view>
 				<u-cell-group :border="false">
-					<u-cell title="请选择日期" isLink="true" :value="date" @click="selectDate"></u-cell>
-					<u-cell title="请选择日期" isLink="true" :value="date" @click="selectTime"></u-cell>
-					<u-cell title="发送微信通知" clickable @click="wechatInfo"><u-switch slot="right-icon" v-model="checked" size="40rpx" activeColor="#5ac725"></u-switch></u-cell>
-					<view class="input">
-						<u--textarea v-model="reason" placeholder="请输入请假原因" count maxlength="60"></u--textarea>
-					</view>
-					<view style="width: 60%;margin: 20rpx 0 40rpx 20%;"><u-button text="提交" color="#0ab99c" shape="circle"></u-button></view>
+					<view style="height: 28rpx;"></view>
+					<u-cell title="请选择天数" isLink="true" :value="dayType" @click="showDayType = !showDayType"></u-cell>
+					<u-cell title="请选择日期" isLink="true" :value="date" @click="DateShow = !DateShow"></u-cell>
+					<u-cell title="发送微信通知" clickable @click="wechatInfo"><u-switch slot="right-icon" v-model="checked" size="20" activeColor="#5ac725"></u-switch></u-cell>
+					<view class="input"><u--textarea v-model="reason" placeholder="请输入请假原因" count maxlength="60"></u--textarea></view>
+					<view style="width: 60%;margin: 20rpx 0 40rpx 20%;"><u-button text="提交" color="#0ab99c" shape="circle" @click="submit"></u-button></view>
 				</u-cell-group>
+				<u-calendar :showTitle="false" :show="DateShow" :mode="DateMode" @confirm="confirmDate" @close="DateShow = !DateShow"></u-calendar>
+				<u-picker :show="showDayType" :columns="columns" @confirm="DayTypeConfirm" :defaultIndex="defaultIndex" @cancel="showDayType = !showDayType"></u-picker>
 			</view>
 		</view>
-		<view style="margin-top: 600rpx;">
+		<view class="bottom">
 			<u-divider text="END"></u-divider>
-		</view>
-		
-		<view>
 			<u-cell-group :border="false">
-				<u-cell title="查看假单申请" isLink="true"  @click="selectDate"></u-cell>
-				<u-cell title="查看学校公告" isLink="true"  @click="selectDate"></u-cell>
-				<u-cell title="查看个人信息" isLink="true"  @click="selectDate"></u-cell>
+				<u-cell title="查看假单申请" isLink="true" @click="selectDate"></u-cell>
+				<u-cell title="查看学校公告" isLink="true" @click="selectDate"></u-cell>
+				<u-cell title="查看个人信息" isLink="true" @click="selectDate"></u-cell>
 			</u-cell-group>
 		</view>
+		<u-toast ref="uToast"></u-toast>
 	</view>
 </template>
 
@@ -39,11 +38,27 @@ export default {
 		return {
 			textTop: 50,
 			textLeft: 20,
-			show: false,
-			date: '2022/4/10',
+			date: '',
+			reason: '',
 			checked: true,
-			reason:''
+			DateShow: false,
+			showDayType: false,
+			dayType: '连续日期',
+			columns: [['连续日期', '单日']],
+			defaultIndex: 0,
+			DateMode: 'range'
 		};
+	},
+	watch: {
+		dayType(newValue) {
+			if (newValue == '连续日期') {
+				this.DateMode = 'range';
+			}
+			if (newValue == '单日') {
+				this.DateMode = 'single';
+			}
+			this.date = '';
+		}
 	},
 	onLoad() {
 		// #ifdef MP-WEIXIN
@@ -60,8 +75,36 @@ export default {
 			this.checked = !this.checked;
 		},
 		// 日期
-		selectDate() {},
-		selectTime() {}
+		// 确定选择日期
+		confirmDate(e) {
+			this.DateShow = false;
+			if (e.length == 1) {
+				this.date = e[0];
+			} else {
+				this.date = e[0] + ' ~ ' + e[e.length - 1];
+			}
+		},
+		// 确定选择日期类型
+		DayTypeConfirm(e) {
+			this.showDayType = false;
+			this.dayType = e.value[0];
+		},
+		// 提交
+		submit() {
+			if (this.date && this.reason) {
+				console.log(this.date);
+				console.log(this.reason);
+				console.log(this.checked);
+			} else {
+				this.$refs.uToast.show({
+					type: 'error',
+					message: '请先填写好表单',
+					complete() {
+						console.log(123)
+					}
+				});
+			}
+		}
 	}
 };
 </script>
@@ -91,15 +134,16 @@ export default {
 	box-shadow: 0 5rpx 10rpx #cccccc;
 	width: 94%;
 	background-color: #ffffff;
-	position: absolute;
-	top: 350rpx;
+	position: relative;
+	top: -100rpx;
 	left: 3%;
 	border-radius: 30rpx;
-	> view {
-		margin-top: 25rpx;
-	}
 	.input {
 		margin: 20rpx 2%;
 	}
+}
+.bottom {
+	width: 100%;
+	position: absolute;
 }
 </style>

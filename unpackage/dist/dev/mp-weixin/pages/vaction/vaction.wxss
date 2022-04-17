@@ -45,15 +45,16 @@
   box-shadow: 0 5rpx 10rpx #cccccc;
   width: 94%;
   background-color: #ffffff;
-  position: absolute;
-  top: 350rpx;
+  position: relative;
+  top: -100rpx;
   left: 3%;
   border-radius: 30rpx;
 }
-.contain > view.data-v-2f554960 {
-  margin-top: 25rpx;
-}
 .contain .input.data-v-2f554960 {
   margin: 20rpx 2%;
+}
+.bottom.data-v-2f554960 {
+  width: 100%;
+  position: absolute;
 }
 
