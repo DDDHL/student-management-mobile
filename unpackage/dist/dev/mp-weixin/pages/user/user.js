@@ -96,16 +96,16 @@ var components
 try {
   components = {
     uRow: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-row/u-row.vue */ 294))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-row/u-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-row/u-row")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-row/u-row.vue */ 320))
     },
     uCol: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-col/u-col.vue */ 302))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-col/u-col */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-col/u-col")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-col/u-col.vue */ 328))
     },
     uAvatar: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 310))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 336))
     },
     uIcon: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 285))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 311))
     }
   }
 } catch (e) {
@@ -221,7 +221,7 @@ var _default =
       isLogin: false,
       avatar: '',
       nickName: 'Leander',
-      account: 'XXXXXXX',
+      account: '',
       grade: '777',
       role: '管理员',
       options: [
@@ -265,6 +265,7 @@ var _default =
         url: '../wechatLogin/wechatLogin' });
 
       this.wechatLogin();
+
 
       uni.navigateTo({
         url: '../appLogin/appLogin' });

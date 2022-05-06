@@ -96,10 +96,10 @@ var components
 try {
   components = {
     "u-Image": function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u--image/u--image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--image/u--image")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--image/u--image.vue */ 334))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u--image/u--image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--image/u--image")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--image/u--image.vue */ 360))
     },
     "u-Input": function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u--input/u--input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--input/u--input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--input/u--input.vue */ 340))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u--input/u--input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--input/u--input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--input/u--input.vue */ 366))
     },
     uButton: function() {
       return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 267))
@@ -225,7 +225,7 @@ var _api = __webpack_require__(/*! ../../config/api.js */ 183); //
 /* 加密 */var _default = { data: function data() {return { query: { userAccount: '', password: '', openId: '', rememberMe: false }, disabled: true, text: '登录' };}, watch: { query: { deep: true, handler: function handler() {if (this.query.password && this.query.userAccount) {this.disabled = false;return;}this.disabled = true;} } }, onLoad: function onLoad(options) {this.text = options.text;},
   methods: {
     login: function login() {
-      var value = uni.getStorageSync('openid');
+      var value = uni.getStorageSync('openId');
       if (value) {
         this.query.openId = value;
       }

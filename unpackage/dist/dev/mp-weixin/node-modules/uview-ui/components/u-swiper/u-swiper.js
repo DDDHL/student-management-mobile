@@ -80,10 +80,10 @@ var components
 try {
   components = {
     uLoadingIcon: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-loading-icon/u-loading-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-loading-icon/u-loading-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-loading-icon/u-loading-icon.vue */ 346))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-loading-icon/u-loading-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-loading-icon/u-loading-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-loading-icon/u-loading-icon.vue */ 372))
     },
     uSwiperIndicator: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-swiper-indicator/u-swiper-indicator */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-swiper-indicator/u-swiper-indicator")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper-indicator/u-swiper-indicator.vue */ 354))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-swiper-indicator/u-swiper-indicator */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-swiper-indicator/u-swiper-indicator")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper-indicator/u-swiper-indicator.vue */ 380))
     }
   }
 } catch (e) {
@@ -126,9 +126,10 @@ var render = function() {
         var g9 = g8 ? _vm.$u.addUnit(_vm.height) : null
         var m1 = g8 ? _vm.getSource(item) : null
         var m2 = g8 ? _vm.getPoster(item) : null
-        var g10 = g8 ? _vm.$u.test.object(item) : null
-        var g11 = _vm.$u.test.object(item)
-        var g12 = _vm.$u.test.image(_vm.getSource(item))
+        var g10 = g8 ? _vm.showTitle && _vm.$u.test.object(item) : null
+        var g11 = _vm.showTitle && _vm.$u.test.object(item)
+        var g12 =
+          item.g11 && item.title && _vm.$u.test.image(_vm.getSource(item))
         return {
           $orig: $orig,
           s0: s0,

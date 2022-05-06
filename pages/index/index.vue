@@ -9,7 +9,7 @@
 export default {
 	data() {
 		return {
-			titleHeight: 0,
+			titleHeight: 50,
 			list3: ['https://cdn.uviewui.com/uview/swiper/swiper3.png', 'https://cdn.uviewui.com/uview/swiper/swiper2.png', 'https://cdn.uviewui.com/uview/swiper/swiper1.png']
 		};
 	},

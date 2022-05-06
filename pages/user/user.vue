@@ -7,7 +7,7 @@
 			<!-- 名字 -->
 			<u-row customStyle="margin-bottom: 10px;color: #F1F1F1;">
 				<u-col span="3">
-					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="110rpx" mode="aspectFill"></u-avatar></view>
+					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="110rpx" mode="aspectFill" @click="login()"></u-avatar></view>
 				</u-col>
 				<u-col span="6">
 					<view style="font-weight: 700;font-size: 28rpx;" v-if="account">{{ nickName }}</view>
@@ -57,7 +57,7 @@ export default {
 			isLogin: false,
 			avatar: '',
 			nickName: 'Leander',
-			account: 'XXXXXXX',
+			account: '',
 			grade: '777',
 			role: '管理员',
 			options: [
@@ -102,6 +102,7 @@ export default {
 			});
 			this.wechatLogin();
 			// #endif
+			
 			uni.navigateTo({
 				url: '../appLogin/appLogin'
 			});

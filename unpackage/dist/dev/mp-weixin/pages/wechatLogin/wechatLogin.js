@@ -94,10 +94,10 @@ var components
 try {
   components = {
     uLoadingPage: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-loading-page/u-loading-page */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-loading-page/u-loading-page")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-loading-page/u-loading-page.vue */ 318))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-loading-page/u-loading-page */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-loading-page/u-loading-page")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-loading-page/u-loading-page.vue */ 344))
     },
     uNotify: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-notify/u-notify */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-notify/u-notify")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-notify/u-notify.vue */ 326))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-notify/u-notify */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-notify/u-notify")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-notify/u-notify.vue */ 352))
     }
   }
 } catch (e) {
@@ -177,25 +177,11 @@ var _default = { data: function data() {return { query: { userAccount: '', passw
   onLoad: function onLoad() {var _this = this;
     // 用户拒绝微信授权
     uni.$on('rejectLogin', function () {
-      _this.$refs.uNotify.show({
-        type: 'error',
-        bgColor: '#f56c6c',
-        message: '请授权登录' });
-
-      setTimeout(function () {
-        _this.goback();
-      }, 2000);
+      _this.backToUser('请授权登录!');
     });
-
     // 用户同意微信授权
     uni.$on('login', function () {
-      // this.query.openId = uni.getStorageSync('openId');
-      // login(this.query).then((res)=>{
-      // 	console.log(res)
-      // })
-      uni.reLaunch({
-        url: '../appLogin/appLogin?text=绑定账号' });
-
+      _this.openIdLogin();
     });
   },
   methods: {
@@ -204,6 +190,35 @@ var _default = { data: function data() {return { query: { userAccount: '', passw
       uni.switchTab({
         url: '../user/user' });
 
+    },
+    // 使用openid登录
+    openIdLogin: function openIdLogin() {
+      var value = uni.getStorageSync('openId');
+      if (!value) {
+        this.backToUser('服务器出错，请重试!');
+        return;
+      }
+      // 登录请求
+      (0, _api.login)({ openId: value, rememberMe: false }).then(function (res) {
+        console.log(res);
+      });
+      // uni.reLaunch({
+      // 	url:'../appLogin/appLogin?text=绑定账号'
+      // })
+    },
+    // 出错返回用户页面
+    backToUser: function backToUser(msg) {var _this2 = this;
+      this.$refs.uNotify.show({
+        type: 'error',
+        bgColor: '#f56c6c',
+        message: msg });
+
+      uni.removeStorage({
+        key: 'openId' });
+
+      setTimeout(function () {
+        _this2.goback();
+      }, 1000);
     } },
 
   onUnload: function onUnload() {

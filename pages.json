@@ -31,6 +31,7 @@
 		}, {
 			"path": "pages/user/user",
 			"style": {
+				"backgroundColor": "#99d8e1",
 				"navigationStyle": "custom",
 				"app-plus": {
 					"titleView": false
@@ -52,25 +53,24 @@
 				"enablePullDownRefresh": false,
 				"navigationBarBackgroundColor": "#97d9e1"
 			}
+		}, {
+			"path": "pages/appLogin/appLogin",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#97d9e1"
+			}
 		}
-	    ,{
-            "path" : "pages/appLogin/appLogin",
-            "style": {
-            	"navigationBarTitleText": "登录",
-            	"enablePullDownRefresh": false,
-            	"navigationBarBackgroundColor": "#97d9e1"
-            }
-        }
-    ],
+	],
 	"globalStyle": {
+		"backgroundColor": "#fff",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
 		"backgroundColor": "#fff",
-		"borderStyle": "white",
+		"borderStyle": "black",
 		"list": [{
 			"pagePath": "pages/index/index",
 			"iconPath": "static/logo/index.png",
@@ -93,17 +93,17 @@
 			"text": "我的"
 		}]
 	},
-	"condition": { 
-		"current": 0, 
+	"condition": {
+		"current": 0,
 		"list": [{
-				"name": "user", 
-				"path": "pages/user/user" 
+				"name": "user",
+				"path": "pages/user/user"
 			},
 			{
-					"name": "vaction", 
-					"path": "pages/vaction/vaction" 
+				"name": "vaction",
+				"path": "pages/vaction/vaction"
 			}
-			
+
 		]
 	}
 }

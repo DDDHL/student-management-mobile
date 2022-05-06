@@ -1,4 +1,5 @@
 {
+  "backgroundColor": "#99d8e1",
   "navigationStyle": "custom",
   "usingComponents": {
     "u-row": "/node-modules/uview-ui/components/u-row/u-row",

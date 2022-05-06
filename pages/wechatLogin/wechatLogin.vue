@@ -21,25 +21,11 @@ export default {
 	onLoad() {
 		// 用户拒绝微信授权
 		uni.$on('rejectLogin', () => {
-			this.$refs.uNotify.show({
-				type: 'error',
-				bgColor: '#f56c6c',
-				message: '请授权登录'
-			});
-			setTimeout(() => {
-				this.goback();
-			}, 2000);
+			this.backToUser('请授权登录!')
 		});
-
 		// 用户同意微信授权
 		uni.$on('login', () => {
-			// this.query.openId = uni.getStorageSync('openId');
-			// login(this.query).then((res)=>{
-			// 	console.log(res)
-			// })
-			uni.reLaunch({
-				url:'../appLogin/appLogin?text=绑定账号'
-			})
+			this.openIdLogin()
 		});
 	},
 	methods: {
@@ -48,6 +34,35 @@ export default {
 			uni.switchTab({
 				url:'../user/user'
 			});
+		},
+		// 使用openid登录
+		openIdLogin(){
+			const value = uni.getStorageSync('openId');
+			if (!value) {
+				this.backToUser('服务器出错，请重试!')
+				return
+			}
+			// 登录请求
+			login({openId:value,rememberMe:false}).then(res => {
+				console.log(res)
+			});
+			// uni.reLaunch({
+			// 	url:'../appLogin/appLogin?text=绑定账号'
+			// })
+		},
+		// 出错返回用户页面
+		backToUser(msg){
+			this.$refs.uNotify.show({
+				type: 'error',
+				bgColor: '#f56c6c',
+				message: msg
+			});
+			uni.removeStorage({
+				key:'openId'
+			})
+			setTimeout(() => {
+				this.goback();
+			}, 1000);
 		}
 	},
 	onUnload() {
