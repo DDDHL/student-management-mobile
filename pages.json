@@ -7,7 +7,8 @@
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
-					"titleView": false
+					"titleView": false,
+					"bounce": "none"
 				}
 			}
 		},
@@ -16,7 +17,8 @@
 			"style": {
 				"navigationStyle": "custom",
 				"app-plus": {
-					"titleView": false
+					"titleView": false,
+					"bounce": "none"
 				}
 			}
 
@@ -34,7 +36,8 @@
 				"backgroundColor": "#99d8e1",
 				"navigationStyle": "custom",
 				"app-plus": {
-					"titleView": false
+					"titleView": false,
+					"bounce": "none"
 				}
 			}
 
@@ -102,6 +105,10 @@
 			{
 				"name": "vaction",
 				"path": "pages/vaction/vaction"
+			},
+			{
+				"name": "login",
+				"path": "pages/appLogin/appLogin"
 			}
 
 		]

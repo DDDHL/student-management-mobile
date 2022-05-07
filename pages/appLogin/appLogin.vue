@@ -25,6 +25,9 @@
 			</view>
 			<view><u-button color="#97d9e1" :text="text" @click="login" :disabled="disabled"></u-button></view>
 		</view>
+		<!-- #ifdef APP -->
+		<view class="footer" @click="wechatLogin"><u-icon name="weixin-circle-fill" color="#00bf00" size="28"></u-icon></view>
+		<!-- #endif -->
 	</view>
 </template>
 
@@ -63,6 +66,7 @@ export default {
 		// #endif
 	},
 	methods: {
+		// 绑定登录
 		login() {
 			const value = uni.getStorageSync('openId');
 			if (value) {
@@ -73,9 +77,15 @@ export default {
 			params.password = Encrypt(this.query.password);
 			// 登录请求
 			login(params).then(res => {
-				console.log(res)
+				console.log(res);
 			});
-		}
+		},
+		// #ifdef APP
+		// 微信登录获取openId
+		wechatLogin() {
+			console.log('使用微信登录')
+		},
+		// #endif
 	}
 };
 </script>
@@ -103,5 +113,11 @@ export default {
 			width: 60%;
 		}
 	}
+}
+.footer {
+	position: absolute;
+	bottom: 2%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 </style>

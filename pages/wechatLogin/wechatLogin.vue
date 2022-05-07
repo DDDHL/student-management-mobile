@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { login } from '../../config/api.js';
+import { login,checkWx } from '../../config/api.js';
 export default {
 	data() {
 		return {
@@ -37,18 +37,18 @@ export default {
 		},
 		// 使用openid登录
 		openIdLogin(){
-			const value = uni.getStorageSync('openId');
-			if (!value) {
+			const openId = uni.getStorageSync('openId');
+			if (!openId) {
 				this.backToUser('服务器出错，请重试!')
 				return
 			}
 			// 登录请求
-			login({openId:value,rememberMe:false}).then(res => {
+			checkWx(openId).then(res => {
 				console.log(res)
 			});
-			// uni.reLaunch({
-			// 	url:'../appLogin/appLogin?text=绑定账号'
-			// })
+			uni.reLaunch({
+				url:'../appLogin/appLogin?text=绑定账号'
+			})
 		},
 		// 出错返回用户页面
 		backToUser(msg){

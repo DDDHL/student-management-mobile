@@ -7332,35 +7332,18 @@ var render = function() {
             },
             [_vm._v("我的")]
           ),
-          _c("v-uni-view", {
-            staticClass: _vm._$g(3, "sc"),
-            staticStyle: {
-              "background-image":
-                "url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg)"
-            },
-            attrs: { _i: 3 }
-          }),
           _c(
             "u-row",
-            { attrs: { _i: 4 } },
+            { attrs: { _i: 3 } },
             [
               _c(
                 "u-col",
-                { attrs: { _i: 5 } },
+                { attrs: { _i: 4 } },
                 [
                   _c(
                     "v-uni-view",
-                    { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                    [
-                      _c("u-avatar", {
-                        attrs: { _i: 7 },
-                        on: {
-                          click: function($event) {
-                            return _vm.$handleViewEvent($event)
-                          }
-                        }
-                      })
-                    ],
+                    { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+                    [_c("u-avatar", { attrs: { _i: 6 } })],
                     1
                   )
                 ],
@@ -7368,25 +7351,28 @@ var render = function() {
               ),
               _c(
                 "u-col",
-                { attrs: { _i: 8 } },
+                { attrs: { _i: 7 } },
                 [
-                  _vm._$g(9, "i")
+                  _vm._$g(8, "i")
                     ? _c(
                         "v-uni-view",
                         {
                           staticStyle: {
                             "font-weight": "700",
-                            "font-size": "28rpx"
+                            "font-size": "35rpx"
                           },
-                          attrs: { _i: 9 }
+                          attrs: { _i: 8 }
                         },
-                        [_vm._v(_vm._$g(9, "t0-0"))]
+                        [_vm._v(_vm._$g(8, "t0-0"))]
                       )
                     : _c(
                         "v-uni-view",
                         {
-                          staticStyle: { "font-weight": "700" },
-                          attrs: { _i: 10 },
+                          staticStyle: {
+                            "font-weight": "700",
+                            "font-size": "35rpx"
+                          },
+                          attrs: { _i: 9 },
                           on: {
                             click: function($event) {
                               return _vm.$handleViewEvent($event)
@@ -7400,14 +7386,14 @@ var render = function() {
               ),
               _c(
                 "u-col",
-                { attrs: { _i: 11 } },
+                { attrs: { _i: 10 } },
                 [
-                  _vm._$g(12, "i")
+                  _vm._$g(11, "i")
                     ? _c(
                         "v-uni-view",
                         {
                           staticStyle: { display: "flex" },
-                          attrs: { _i: 12 },
+                          attrs: { _i: 11 },
                           on: {
                             click: function($event) {
                               return _vm.$handleViewEvent($event)
@@ -7415,12 +7401,12 @@ var render = function() {
                           }
                         },
                         [
-                          _c("u-icon", { attrs: { _i: 13 } }),
+                          _c("u-icon", { attrs: { _i: 12 } }),
                           _c(
                             "v-uni-view",
                             {
                               staticStyle: { "font-size": "28rpx" },
-                              attrs: { _i: 14 }
+                              attrs: { _i: 13 }
                             },
                             [_vm._v("编辑信息")]
                           )
@@ -7434,39 +7420,47 @@ var render = function() {
             ],
             1
           ),
-          _vm._$g(15, "i")
+          _vm._$g(14, "i")
             ? _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
                 [
                   _c(
                     "v-uni-view",
-                    { attrs: { _i: 16 } },
+                    { attrs: { _i: 15 } },
                     [
-                      _c("v-uni-view", { attrs: { _i: 17 } }, [
-                        _vm._v(_vm._$g(17, "t0-0"))
-                      ]),
-                      _c("v-uni-view", { attrs: { _i: 18 } }, [_vm._v("年级")])
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                        [_vm._v(_vm._$g(16, "t0-0"))]
+                      ),
+                      _c("v-uni-view", { attrs: { _i: 17 } }, [_vm._v("年级")])
                     ],
                     1
                   ),
                   _c(
                     "v-uni-view",
-                    { attrs: { _i: 19 } },
+                    { attrs: { _i: 18 } },
                     [
-                      _c("v-uni-view", { attrs: { _i: 20 } }, [
-                        _vm._v(_vm._$g(20, "t0-0"))
-                      ]),
-                      _c("v-uni-view", { attrs: { _i: 21 } }, [_vm._v("账号")])
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+                        [_vm._v(_vm._$g(19, "t0-0"))]
+                      ),
+                      _c("v-uni-view", { attrs: { _i: 20 } }, [_vm._v("账号")])
                     ],
                     1
                   ),
                   _c(
                     "v-uni-view",
-                    { attrs: { _i: 22 } },
+                    { attrs: { _i: 21 } },
                     [
-                      _c("v-uni-view", { attrs: { _i: 23 } }, [_vm._v("学生")]),
-                      _c("v-uni-view", { attrs: { _i: 24 } }, [_vm._v("职位")])
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+                        [_vm._v(_vm._$g(22, "t0-0"))]
+                      ),
+                      _c("v-uni-view", { attrs: { _i: 23 } }, [_vm._v("职位")])
                     ],
                     1
                   )
@@ -7476,22 +7470,29 @@ var render = function() {
             : _vm._e(),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+            {
+              staticClass: _vm._$g(24, "sc"),
+              style: _vm._$g(24, "s"),
+              attrs: { _i: 24 }
+            },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
-                _vm._l(_vm._$g(27, "f"), function(item, $10, $20, $30) {
+                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                _vm._l(_vm._$g(26, "f"), function(item, $10, $20, $30) {
                   return _c(
                     "v-uni-view",
-                    { key: item, attrs: { _i: "27-" + $30 } },
+                    { key: item, attrs: { _i: "26-" + $30 } },
                     [
-                      _c("v-uni-view", { attrs: { _i: "28-" + $30 } }, [
-                        _vm._v(_vm._$g("28-" + $30, "t0-0"))
+                      _c("v-uni-view", { attrs: { _i: "27-" + $30 } }, [
+                        _vm._v(_vm._$g("27-" + $30, "t0-0"))
                       ]),
-                      _c("v-uni-view", { attrs: { _i: "29-" + $30 } }, [
-                        _vm._v(">")
-                      ])
+                      _c(
+                        "v-uni-view",
+                        { attrs: { _i: "28-" + $30 } },
+                        [_c("u-icon", { attrs: { _i: "29-" + $30 } })],
+                        1
+                      )
                     ],
                     1
                   )
@@ -8831,7 +8832,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../kaifa/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 16);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 背景色 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.bg[data-v-5bac9036] {\r\n  width: 100%;\r\n  height: 600rpx;\r\n  background-color: #d9afd9;\r\n  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);\r\n  border-radius: 100% 100% 100% 100% / 0% 0% 18% 18%;\n}\n.title[data-v-5bac9036] {\r\n  font-weight: 600;\r\n  line-height: 30px;\r\n  margin-left: 40rpx;\r\n  font-size: 35rpx;\r\n  color: #F1F1F1;\n}\n.avatar[data-v-5bac9036] {\r\n  margin: 40rpx;\n}\n.info[data-v-5bac9036] {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  margin-top: 80rpx;\r\n  color: #F1F1F1;\r\n  text-align: center;\r\n  font-size: 24rpx;\n}\n.contain[data-v-5bac9036] {\r\n  margin-top: 45rpx;\r\n  width: 100%;\n}\n.contain > .contain_bg[data-v-5bac9036] {\r\n  background-color: #fff;\r\n  width: 94%;\r\n  margin-left: 3%;\r\n  border-radius: 50rpx;\r\n  display: flex;\r\n  flex-direction: column;\r\n  font-size: 32rpx;\r\n  height: 600rpx;\r\n  box-shadow: 5rpx 5rpx 50rpx #cccccc;\r\n  margin-bottom: 100rpx;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036] {\r\n  display: flex;\r\n  height: 80rpx;\r\n  border-bottom: 1px solid #f5f5f5;\r\n  align-items: center;\n}\n.contain > .contain_bg > uni-view > uni-view[data-v-5bac9036]:first-child {\r\n  margin-left: 60rpx;\n}\n.contain > .contain_bg > uni-view > uni-view[data-v-5bac9036]:last-child {\r\n  margin-left: 450rpx;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036]:active {\r\n  background-color: #f3f4f6;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036]:first-child {\r\n  border-top-left-radius: 50rpx;\r\n  border-top-right-radius: 50rpx;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036]:last-child {\r\n  border: none;\r\n  border-bottom-left-radius: 50rpx;\r\n  border-bottom-right-radius: 50rpx;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 背景色 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.bg[data-v-5bac9036] {\r\n  width: 100%;\r\n  height: 600rpx;\r\n  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);\r\n  border-radius: 100% 100% 100% 100% / 0% 0% 18% 18%;\n}\n.title[data-v-5bac9036] {\r\n  font-weight: 600;\r\n  line-height: 30px;\r\n  margin-left: 40rpx;\r\n  font-size: 35rpx;\r\n  color: #F1F1F1;\n}\n.avatar[data-v-5bac9036] {\r\n  margin: 40rpx;\n}\n.info[data-v-5bac9036] {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  margin-top: 80rpx;\r\n  color: #f5f5f5;\r\n  text-align: center;\r\n  font-size: 32rpx;\n}\n.contain[data-v-5bac9036] {\r\n  width: 100%;\n}\n.contain > .contain_bg[data-v-5bac9036] {\r\n  background-color: #fff;\r\n  width: 94%;\r\n  margin-left: 3%;\r\n  border-radius: 50rpx;\r\n  display: flex;\r\n  flex-direction: column;\r\n  font-size: 32rpx;\r\n  height: 600rpx;\r\n  box-shadow: 5rpx 5rpx 50rpx #cccccc;\r\n  margin-bottom: 100rpx;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036] {\r\n  display: flex;\r\n  height: 80rpx;\r\n  border-bottom: 1px solid #f5f5f5;\r\n  align-items: center;\n}\n.contain > .contain_bg > uni-view > uni-view[data-v-5bac9036]:first-child {\r\n  margin-left: 60rpx;\n}\n.contain > .contain_bg > uni-view > uni-view[data-v-5bac9036]:last-child {\r\n  margin-left: 450rpx;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036]:active {\r\n  background-color: #f3f4f6;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036]:first-child {\r\n  border-top-left-radius: 50rpx;\r\n  border-top-right-radius: 50rpx;\n}\n.contain > .contain_bg > uni-view[data-v-5bac9036]:last-child {\r\n  border: none;\r\n  border-bottom-left-radius: 50rpx;\r\n  border-bottom-right-radius: 50rpx;\n}\n.info_text[data-v-5bac9036] {\r\n  font-weight: 700;\r\n  color: #ffff7f;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -9689,7 +9690,8 @@ try {
   components = {
     "u-Image": __webpack_require__(/*! uview-ui/components/u--image/u--image.vue */ 301).default,
     "u-Input": __webpack_require__(/*! uview-ui/components/u--input/u--input.vue */ 314).default,
-    uButton: __webpack_require__(/*! uview-ui/components/u-button/u-button.vue */ 94).default
+    uButton: __webpack_require__(/*! uview-ui/components/u-button/u-button.vue */ 94).default,
+    uIcon: __webpack_require__(/*! uview-ui/components/u-icon/u-icon.vue */ 60).default
   }
 } catch (e) {
   if (
@@ -9772,6 +9774,20 @@ var render = function() {
             1
           )
         ],
+        1
+      ),
+      _c(
+        "v-uni-view",
+        {
+          staticClass: _vm._$g(10, "sc"),
+          attrs: { _i: 10 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [_c("u-icon", { attrs: { _i: 11 } })],
         1
       )
     ],
@@ -10761,7 +10777,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../kaifa/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 16);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 背景色 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.contain[data-v-15a70bd6] {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100%;\r\n  width: 100%;\n}\n.contain > uni-view[data-v-15a70bd6] {\r\n  margin-top: -400rpx;\n}\n.contain > uni-view[data-v-15a70bd6]:nth-child(2) {\r\n  margin-top: 100rpx;\r\n  width: 60%;\n}\n.contain > uni-view[data-v-15a70bd6]:nth-child(3) {\r\n  margin-top: 50rpx;\r\n  width: 60%;\n}\n.contain > uni-view[data-v-15a70bd6]:nth-child(4) {\r\n  margin-top: 70rpx;\r\n  width: 60%;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 背景色 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.contain[data-v-15a70bd6] {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100%;\r\n  width: 100%;\n}\n.contain > uni-view[data-v-15a70bd6] {\r\n  margin-top: -400rpx;\n}\n.contain > uni-view[data-v-15a70bd6]:nth-child(2) {\r\n  margin-top: 100rpx;\r\n  width: 60%;\n}\n.contain > uni-view[data-v-15a70bd6]:nth-child(3) {\r\n  margin-top: 50rpx;\r\n  width: 60%;\n}\n.contain > uni-view[data-v-15a70bd6]:nth-child(4) {\r\n  margin-top: 70rpx;\r\n  width: 60%;\n}\n.footer[data-v-15a70bd6] {\r\n  position: absolute;\r\n  bottom: 2%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 

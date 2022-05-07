@@ -48,4 +48,11 @@
   margin-top: 70rpx;
   width: 60%;
 }
+.footer.data-v-5ddcd786 {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 

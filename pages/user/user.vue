@@ -2,18 +2,16 @@
 	<view>
 		<view class="bg">
 			<view class="title" :style="'padding-top:' + titleHeight + 'px'">我的</view>
-			<view class="cu-avatar lg round margin-left margin-top" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
-
-			<!-- 名字 -->
+			
 			<u-row customStyle="margin-bottom: 10px;color: #F1F1F1;">
 				<u-col span="3">
-					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="110rpx" mode="aspectFill" @click="login()"></u-avatar></view>
+					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="110rpx" mode="aspectFill"></u-avatar></view>
 				</u-col>
 				<u-col span="6">
-					<view style="font-weight: 700;font-size: 28rpx;" v-if="account">{{ nickName }}</view>
-					<view style="font-weight: 700;" v-else @click="login()">登录</view>
+					<view style="font-weight: 700;font-size: 35rpx;" v-if="account">{{ nickName }}</view>
+					<view style="font-weight: 700;font-size: 35rpx;" v-else @click="login()">登录</view>
 				</u-col>
-				<u-col span="4">
+				<u-col span="3">
 					<view v-if="account" style="display: flex;" @click="editInfo">
 						<u-icon name="edit-pen" color="#F1F1F1" size="32rpx"></u-icon>
 						<view style="font-size: 28rpx;">编辑信息</view>
@@ -21,27 +19,26 @@
 				</u-col>
 			</u-row>
 
-			<!-- 个人信息 -->
 			<view class="info" v-if="account">
 				<view>
-					<view>{{ grade }}</view>
+					<view class="info_text">{{ grade }}</view>
 					<view>年级</view>
 				</view>
 				<view>
-					<view>{{ account }}</view>
+					<view class="info_text">{{ account }}</view>
 					<view>账号</view>
 				</view>
 				<view>
-					<view>学生</view>
+					<view class="info_text">{{role}}</view>
 					<view>职位</view>
 				</view>
 			</view>
-			<!-- list -->
-			<view class="contain">
+			
+			<view class="contain" :style="'margin-top:'+ listHeight +'rpx' ">
 				<view class="contain_bg">
 					<view v-for="item in options" :key="item.name">
 						<view>{{ item.name }}</view>
-						<view>></view>
+						<view><u-icon name="arrow-right"  size="20"></u-icon></view>
 					</view>
 				</view>
 			</view>
@@ -58,8 +55,9 @@ export default {
 			avatar: '',
 			nickName: 'Leander',
 			account: '',
-			grade: '777',
+			grade: '2019级',
 			role: '管理员',
+			listHeight:160,
 			options: [
 				{ name: '新华的圈' },
 				{ name: '我的信息' },
@@ -73,6 +71,9 @@ export default {
 		};
 	},
 	onLoad() {
+		if(this.account!==''){
+			this.listHeight = 55 
+		}
 		// #ifdef MP-WEIXIN
 		this.getHeight();
 		this.WechatisLogin();
@@ -157,7 +158,6 @@ export default {
 .bg {
 	width: 100%;
 	height: 600rpx;
-	background-color: #d9afd9;
 	background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
 	border-radius: 100% 100% 100% 100% / 0% 0% 18% 18%;
 }
@@ -177,12 +177,11 @@ export default {
 	display: flex;
 	justify-content: space-around;
 	margin-top: 80rpx;
-	color: $uni-color-white;
+	color: #f5f5f5;
 	text-align: center;
-	font-size: 24rpx;
+	font-size: 32rpx;
 }
 .contain {
-	margin-top: 45rpx;
 	width: 100%;
 	> .contain_bg {
 		background-color: #fff;
@@ -222,5 +221,9 @@ export default {
 			}
 		}
 	}
+}
+.info_text{
+	font-weight: 700;
+	color: #ffff7f;
 }
 </style>
