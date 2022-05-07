@@ -2,43 +2,43 @@
 	<view>
 		<view class="bg">
 			<view class="title" :style="'padding-top:' + titleHeight + 'px'">我的</view>
-			
+
 			<u-row customStyle="margin-bottom: 10px;color: #F1F1F1;">
 				<u-col span="3">
-					<view class="avatar"><u-avatar :src="avatar" shape="circle" size="110rpx" mode="aspectFill"></u-avatar></view>
+					<view class="avatar"><u-avatar :src="userInfo.avatarUrl" shape="circle" size="110rpx" mode="aspectFill"></u-avatar></view>
 				</u-col>
 				<u-col span="6">
-					<view style="font-weight: 700;font-size: 35rpx;" v-if="account">{{ nickName }}</view>
+					<view style="font-weight: 700;font-size: 35rpx;" v-if="userInfo.account">{{ userInfo.nickName }}</view>
 					<view style="font-weight: 700;font-size: 35rpx;" v-else @click="login()">登录</view>
 				</u-col>
 				<u-col span="3">
-					<view v-if="account" style="display: flex;" @click="editInfo">
+					<view v-if="userInfo.account" style="display: flex;" @click="editInfo">
 						<u-icon name="edit-pen" color="#F1F1F1" size="32rpx"></u-icon>
 						<view style="font-size: 28rpx;">编辑信息</view>
 					</view>
 				</u-col>
 			</u-row>
 
-			<view class="info" v-if="account">
+			<view class="info" v-if="userInfo.account">
 				<view>
-					<view class="info_text">{{ grade }}</view>
+					<view class="info_text">{{ userInfo.grade }}</view>
 					<view>年级</view>
 				</view>
 				<view>
-					<view class="info_text">{{ account }}</view>
+					<view class="info_text">{{ userInfo.account }}</view>
 					<view>账号</view>
 				</view>
 				<view>
-					<view class="info_text">{{role}}</view>
+					<view class="info_text">{{ userInfo.role }}</view>
 					<view>职位</view>
 				</view>
 			</view>
-			
-			<view class="contain" :style="'margin-top:'+ listHeight +'rpx' ">
+
+			<view class="contain" :style="'margin-top:' + listHeight + 'rpx'">
 				<view class="contain_bg">
 					<view v-for="item in options" :key="item.name">
 						<view>{{ item.name }}</view>
-						<view><u-icon name="arrow-right"  size="20"></u-icon></view>
+						<view><u-icon name="arrow-right" size="20"></u-icon></view>
 					</view>
 				</view>
 			</view>
@@ -47,17 +47,14 @@
 </template>
 
 <script>
+import { testToken } from '@/utils/token.js';
 export default {
 	data() {
 		return {
 			titleHeight: 50,
 			isLogin: false,
-			avatar: '',
-			nickName: 'Leander',
-			account: '',
-			grade: '2019级',
-			role: '管理员',
-			listHeight:160,
+			listHeight: 160,
+			userInfo: {},
 			options: [
 				{ name: '新华的圈' },
 				{ name: '我的信息' },
@@ -71,29 +68,32 @@ export default {
 		};
 	},
 	onLoad() {
-		if(this.account!==''){
-			this.listHeight = 55 
-		}
+		this.checkToken();
 		// #ifdef MP-WEIXIN
 		this.getHeight();
-		this.WechatisLogin();
 		// #endif
 	},
 	methods: {
+		// 验证token
+		checkToken() {
+			testToken().then(res => {
+				uni.getStorage({
+					key: 'user',
+					success: res => {
+						console.log(res)
+						this.userInfo = res.data;
+						this.listHeight = 55;
+					}
+				});
+			}).catch(err=>{
+				console.log(err)
+				this.userInfo = {}
+			})
+		},
 		// 获取微信右上角胶囊高度
 		getHeight() {
 			let res = wx.getMenuButtonBoundingClientRect();
 			this.titleHeight = res.top;
-		},
-
-		// 检测是否登录过 openId是否存在
-		WechatisLogin() {
-			uni.getStorage({
-				key: 'openId',
-				success: res => {
-					this.isLogin = true;
-				}
-			});
 		},
 		// 跳转登录页
 		login() {
@@ -103,7 +103,7 @@ export default {
 			});
 			this.wechatLogin();
 			// #endif
-			
+
 			uni.navigateTo({
 				url: '../appLogin/appLogin'
 			});
@@ -222,7 +222,7 @@ export default {
 		}
 	}
 }
-.info_text{
+.info_text {
 	font-weight: 700;
 	color: #ffff7f;
 }

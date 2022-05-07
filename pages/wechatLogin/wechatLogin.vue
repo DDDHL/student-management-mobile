@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { login,checkWx } from '../../config/api.js';
+import { login, checkWx } from '../../config/api.js';
 export default {
 	data() {
 		return {
@@ -15,51 +15,83 @@ export default {
 				password: '',
 				openId: '',
 				rememberMe: false
-			},
+			}
 		};
 	},
 	onLoad() {
 		// 用户拒绝微信授权
 		uni.$on('rejectLogin', () => {
-			this.backToUser('请授权登录!')
+			this.backToUser('请授权登录!', 'error');
 		});
 		// 用户同意微信授权
 		uni.$on('login', () => {
-			this.openIdLogin()
+			this.openIdLogin();
 		});
 	},
 	methods: {
 		// 授权失败跳转到个人中心
 		goback() {
 			uni.switchTab({
-				url:'../user/user'
+				url: '../user/user',
+				success: function(e) {
+					var page = getCurrentPages().pop();
+					if (page == undefined || page == null) return;
+					page.onLoad();
+				}
 			});
 		},
 		// 使用openid登录
-		openIdLogin(){
+		openIdLogin() {
 			const openId = uni.getStorageSync('openId');
 			if (!openId) {
-				this.backToUser('服务器出错，请重试!')
-				return
+				this.backToUser('服务器出错，请重试!');
+				return;
 			}
 			// 登录请求
 			checkWx(openId).then(res => {
-				console.log(res)
+				if (res == '10018') {
+					uni.reLaunch({
+						url: '../appLogin/appLogin?text=绑定账号'
+					});
+					return;
+				}
+				// 登录成功保存信息
+				this.saveUserInfo();
 			});
-			uni.reLaunch({
-				url:'../appLogin/appLogin?text=绑定账号'
-			})
+		},
+		// 获取用户信息并保存
+		saveUserInfo() {
+			const openId = uni.getStorageSync('openId');
+			login({ openId: openId, rememberMe: false }).then(res => {
+				let data = {
+					nickName: res.nickName,
+					avatarUrl: res.avatarUrl,
+					department: res.department,
+					grade: res.grade,
+					email: res.email,
+					majorClass: res.majorClass,
+					major: res.major,
+					phone: res.phone,
+					role: res.roles[0].roleName,
+					sex: res.sex,
+					account: res.userAccount
+				};
+				uni.setStorageSync('user', data);
+				uni.setStorageSync('token', res.token);
+				this.backToUser('登录成功!', 'success');
+			});
 		},
 		// 出错返回用户页面
-		backToUser(msg){
+		backToUser(msg, type) {
 			this.$refs.uNotify.show({
-				type: 'error',
-				bgColor: '#f56c6c',
+				type: type,
 				message: msg
 			});
-			uni.removeStorage({
-				key:'openId'
-			})
+			if (type == 'error') {
+				uni.removeStorage({
+					key: 'openId'
+				});
+			}
 			setTimeout(() => {
 				this.goback();
 			}, 1000);

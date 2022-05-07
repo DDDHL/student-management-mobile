@@ -8,9 +8,8 @@ module.exports = (vm) => {
 	uni.$u.http.interceptors.request.use((config) => {
 		config.data = config.data || {}
 		// 根据custom参数中配置的是否需要token，添加对应的请求头
-		if (config?.custom?.auth) {
-			// 可以在此通过vm引用vuex中的变量，具体值在vm.$store.state中
-			config.header.token = vm.$store.state.userInfo.token
+		if(config?.custom?.auth) {
+			config.header.token = uni.getStorageSync('token')
 		}
 		return config
 	}, config => {
@@ -21,8 +20,13 @@ module.exports = (vm) => {
 	uni.$u.http.interceptors.response.use((response) => {
 		const data = response.data
 		// 自定义参数
+		console.log(data)
 		const custom = response.config?.custom
 		if (data.code!=='') {
+			// token过期等及未绑定openid
+			if(data.code == '10018'||data.code == '1002'||data.code == '1001'){
+				return data.code
+			}
 			// 如果没有显式定义custom的toast参数为false的话，默认对报错进行toast弹出提示
 			if (custom.toast !== false) {
 				uni.$u.toast(data.message)

@@ -77,14 +77,36 @@ export default {
 			params.password = Encrypt(this.query.password);
 			// 登录请求
 			login(params).then(res => {
-				console.log(res);
+				uni.setStorage({
+					key: 'user',
+					data: { 
+						nickName:res.nickName,
+						avatarUrl: res.avatarUrl, 
+						department: res.department, 
+						grade: res.grade, 
+						email: res.email, 
+						majorClass: res.majorClass,
+						major:res.major,
+						phone:res.phone,
+						role:res.roles[0].roleName,
+						sex:res.sex,
+						account:res.userAccount
+					}
+				});
+				uni.setStorage({
+					key:'token',
+					data:res.token
+				})
+				uni.reLaunch({
+					url: '../user/user'
+				});
 			});
 		},
 		// #ifdef APP
 		// 微信登录获取openId
 		wechatLogin() {
-			console.log('使用微信登录')
-		},
+			console.log('使用微信登录');
+		}
 		// #endif
 	}
 };

@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import {testToken} from '@/utils/token.js'
 export default {
 	data() {
 		return {
@@ -45,7 +46,7 @@ export default {
 			dayType: '连续日期',
 			columns: [['连续日期', '单日']],
 			defaultIndex: 0,
-			DateMode: 'range'
+			DateMode: 'range',
 		};
 	},
 	watch: {
@@ -60,6 +61,11 @@ export default {
 		}
 	},
 	onLoad() {
+		testToken().then(res=>{
+			console.log(res)
+		}).catch(err=>{
+			console.log(err)
+		})
 		// #ifdef MP-WEIXIN
 		this.getHeight();
 		// #endif
