@@ -61,16 +61,28 @@ export default {
 		}
 	},
 	onLoad() {
-		testToken().then(res=>{
-			console.log(res)
-		}).catch(err=>{
-			console.log(err)
-		})
+		//console.log(this.$store.state.hasLogin)
+		this.checkToken();
 		// #ifdef MP-WEIXIN
 		this.getHeight();
 		// #endif
 	},
 	methods: {
+		// 验证token
+		checkToken() {
+			testToken()
+				.then(res => {
+					uni.getStorage({
+						key: 'user',
+						success: res => {
+							
+						}
+					});
+				})
+				.catch(() => {
+					
+				});
+		},
 		getHeight() {
 			let res = wx.getMenuButtonBoundingClientRect();
 			this.textTop = res.top;

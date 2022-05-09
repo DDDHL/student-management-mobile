@@ -76,19 +76,19 @@ export default {
 	methods: {
 		// 验证token
 		checkToken() {
-			testToken().then(res => {
-				uni.getStorage({
-					key: 'user',
-					success: res => {
-						console.log(res)
-						this.userInfo = res.data;
-						this.listHeight = 55;
-					}
+			testToken()
+				.then(res => {
+					uni.getStorage({
+						key: 'user',
+						success: res => {
+							this.userInfo = res.data;
+							this.listHeight = 55;
+						}
+					});
+				})
+				.catch(() => {
+					this.userInfo = {};
 				});
-			}).catch(err=>{
-				console.log(err)
-				this.userInfo = {}
-			})
 		},
 		// 获取微信右上角胶囊高度
 		getHeight() {
@@ -104,20 +104,19 @@ export default {
 			this.wechatLogin();
 			// #endif
 
+			// #ifdef APP-PLUS
 			uni.navigateTo({
 				url: '../appLogin/appLogin'
 			});
+			// #endif
 		},
 		// 微信登录获取openId
 		wechatLogin() {
-			uni.getUserProfile({
-				desc: '微信授权登录',
-				success: res => {
+			this.wechatDingYue().then(res => {
+				if (res) {
 					uni.$emit('login');
-				},
-				fail: err => {
-					// 用户拒绝微信授权
-					uni.$emit('rejectLogin');
+				} else {
+					uni.$emit('rejectLogin', '请同意订阅,否则功能受限无法登录！');
 				}
 			});
 			// 获取openId
@@ -144,6 +143,35 @@ export default {
 				fail: err => {
 					console.log('获取openId失败' + err);
 				}
+			});
+		},
+		// 订阅消息
+		wechatDingYue() {
+			let ids = ['gc2vaD4ItYL1sdr4VRt_dqM0ms0oFFQTneZUbPEuSdE', 'jEmu9I5TdjrJpmrh--HZNr64ldXJLdjJKPi_nuQnF8Y', 'z9MZO3mlh_mhTsx7aFvkCNupGaIrpf7RB2wmmwwjqog'];
+			return new Promise((resolve, reject) => {
+				uni.requestSubscribeMessage({
+					tmplIds: ids,
+					success(res) {
+						let isOk = true;
+						ids.forEach(item => {
+							if (res[item] == 'reject') {
+								isOk = false;
+							}
+						});
+						resolve(isOk);
+						// uni.getSetting({
+						// 	withSubscriptions:true,
+						// 	success: (res) => {
+						// 		if(res.subscriptionsSetting.mainSwitch){
+						// 			uni.$emit('login');
+						// 		}
+						// 	}
+						// })
+					},
+					fail: err => {
+						uni.$emit('rejectLogin', '网络出小差咯,请重新登录');
+					}
+				});
 			});
 		},
 		// 编辑信息

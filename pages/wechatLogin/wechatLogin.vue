@@ -20,8 +20,8 @@ export default {
 	},
 	onLoad() {
 		// 用户拒绝微信授权
-		uni.$on('rejectLogin', () => {
-			this.backToUser('请授权登录!', 'error');
+		uni.$on('rejectLogin', msg => {
+			this.backToUser(msg, 'error');
 		});
 		// 用户同意微信授权
 		uni.$on('login', () => {
@@ -44,15 +44,21 @@ export default {
 		openIdLogin() {
 			const openId = uni.getStorageSync('openId');
 			if (!openId) {
-				this.backToUser('服务器出错，请重试!');
+				this.backToUser('服务器出错，请重试!', 'error');
 				return;
 			}
 			// 登录请求
 			checkWx(openId).then(res => {
 				if (res == '10018') {
-					uni.reLaunch({
-						url: '../appLogin/appLogin?text=绑定账号'
+					this.$refs.uNotify.show({
+						type: 'success',
+						message: '微信首次使用需要绑定ixh账号'
 					});
+					setTimeout(() => {
+						uni.reLaunch({
+							url: '../appLogin/appLogin?text=绑定账号'
+						});
+					}, 1000);
 					return;
 				}
 				// 登录成功保存信息

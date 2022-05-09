@@ -5,11 +5,13 @@
 import {
 	checkTk
 } from '@/config/api.js';
+import store from '@/store';
 
 export const testToken = () => {
 	let user = uni.getStorageSync('user')
 	let token = uni.getStorageSync('token')
-	if(user&&token){
+	let openId = uni.getStorageSync('openId')
+	if(user&&token&&openId){
 		return new Promise((reslove, reject) => {
 			checkTk({}, {
 				custom: {
@@ -18,21 +20,14 @@ export const testToken = () => {
 				}
 			}).then(res => {
 				if (res == null) {
-					console.log('成功')
 					reslove(true)
 				}else{
-					console.log('111')
-					uni.removeStorageSync('user')
-					uni.removeStorageSync('token')
-					uni.removeStorageSync('openId')
+					store.dispatch('logout')
 					reject('账户信息已过期,请重新登录')
 				}
 			});
 		})
 	}
-	console.log('222')
-	uni.removeStorageSync('user')
-	uni.removeStorageSync('token')
-	uni.removeStorageSync('openId')
+	store.dispatch('logout')
 	return Promise.reject('账户信息已过期,请重新登录')
 }

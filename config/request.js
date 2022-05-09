@@ -20,7 +20,7 @@ module.exports = (vm) => {
 	uni.$u.http.interceptors.response.use((response) => {
 		const data = response.data
 		// 自定义参数
-		console.log(data)
+		//console.log(data)
 		const custom = response.config?.custom
 		if (data.code!=='') {
 			// token过期等及未绑定openid
