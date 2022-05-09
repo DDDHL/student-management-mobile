@@ -67,6 +67,7 @@ export default {
 		},
 		// 获取用户信息并保存
 		saveUserInfo() {
+			this.$store.state.hasLogin = true
 			const openId = uni.getStorageSync('openId');
 			login({ openId: openId, rememberMe: false }).then(res => {
 				let data = {

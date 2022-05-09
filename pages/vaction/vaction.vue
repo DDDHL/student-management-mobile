@@ -11,7 +11,7 @@
 					<view style="height: 28rpx;"></view>
 					<u-cell title="请选择天数" isLink="true" :value="dayType" @click="showDayType = !showDayType"></u-cell>
 					<u-cell title="请选择日期" isLink="true" :value="date" @click="DateShow = !DateShow"></u-cell>
-					<u-cell title="发送微信通知" clickable @click="wechatInfo"><u-switch slot="right-icon" v-model="checked" size="20" activeColor="#5ac725"></u-switch></u-cell>
+					<u-cell title="发送微信通知" clickable><u-switch slot="right-icon" v-model="checked" size="20" activeColor="#5ac725"></u-switch></u-cell>
 					<view class="input"><u--textarea v-model="reason" placeholder="请输入请假原因" count maxlength="60"></u--textarea></view>
 					<view style="width: 60%;margin: 20rpx 0 40rpx 20%;"><u-button text="提交" color="#0ab99c" shape="circle" @click="submit"></u-button></view>
 				</u-cell-group>
@@ -32,7 +32,8 @@
 </template>
 
 <script>
-import {testToken} from '@/utils/token.js'
+import { testToken } from '@/utils/token.js';
+import { vacation } from '@/config/api.js';
 export default {
 	data() {
 		return {
@@ -46,7 +47,7 @@ export default {
 			dayType: '连续日期',
 			columns: [['连续日期', '单日']],
 			defaultIndex: 0,
-			DateMode: 'range',
+			DateMode: 'range'
 		};
 	},
 	watch: {
@@ -61,35 +62,32 @@ export default {
 		}
 	},
 	onLoad() {
-		//console.log(this.$store.state.hasLogin)
 		this.checkToken();
 		// #ifdef MP-WEIXIN
 		this.getHeight();
 		// #endif
+	},
+	onTabItemTap() {
+		console.log(this.$store.state.hasLogin);
+		setTimeout(() => {
+			console.log(this.$store.state.hasLogin);
+		}, 2000);
+		this.checkToken();
 	},
 	methods: {
 		// 验证token
 		checkToken() {
 			testToken()
 				.then(res => {
-					uni.getStorage({
-						key: 'user',
-						success: res => {
-							
-						}
-					});
+					this.$store.state.hasLogin = true;
 				})
 				.catch(() => {
-					
+					this.$store.dispatch('logout');
 				});
 		},
 		getHeight() {
 			let res = wx.getMenuButtonBoundingClientRect();
 			this.textTop = res.top;
-		},
-		// 微信通知
-		wechatInfo() {
-			this.checked = !this.checked;
 		},
 		// 日期
 		// 确定选择日期
@@ -108,26 +106,55 @@ export default {
 		},
 		// 提交
 		submit() {
-			if (this.date && this.reason) {
-				console.log(this.date);
-				console.log(this.reason);
-				console.log(this.checked);
-				this.$refs.uToast.show({
-					type: 'loading',
-					message: '正在提交',
-					complete(){
-						console.log('成功')
-					}
-				});
-			} else {
+			if (!this.date) {
 				this.$refs.uToast.show({
 					type: 'error',
-					message: '请先填写好表单',
-					complete() {
-						console.log(123);
-					}
+					message: '请选择请假日期'
 				});
+				return;
 			}
+			if (!this.reason) {
+				this.$refs.uToast.show({
+					type: 'error',
+					message: '请填写请假原因'
+				});
+				return;
+			}
+			// 验证成功发送请假请求
+			// 数据处理
+			let leaveStartTime, leaveEndTime;
+			let user = uni.getStorageSync('user');
+			// 判断单日还是多日
+			if (this.date.includes('~')) {
+				leaveStartTime = this.date.split('~')[0].trim();
+				leaveEndTime = this.date.split('~')[1].trim();
+			} else {
+				leaveStartTime = leaveEndTime = this.date;
+			}
+			let data = {
+				userAccount: user.account,
+				major: user.major,
+				grade: user.grade,
+				nickName: user.nickName,
+				leaveStartTime: leaveStartTime,
+				leaveEndTime: leaveEndTime,
+				leaveReason: this.reason
+			};
+			//console.log(data);
+			vacation(data, {
+				custom: {
+					auth: true
+				}
+			}).then(res => {
+				console.log(res);
+			});
+			// this.$refs.uToast.show({
+			// 	type: 'loading',
+			// 	message: '正在提交',
+			// 	complete() {
+			// 		console.log('成功');
+			// 	}
+			// });
 		}
 	}
 };

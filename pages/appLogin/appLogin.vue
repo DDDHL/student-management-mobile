@@ -69,9 +69,7 @@ export default {
 		// 绑定登录
 		login() {
 			const value = uni.getStorageSync('openId');
-			if (value) {
-				this.query.openId = value;
-			}
+			this.query.openId = value;
 			// 密码加密
 			let params = JSON.parse(JSON.stringify(this.query));
 			params.password = Encrypt(this.query.password);
@@ -79,24 +77,25 @@ export default {
 			login(params).then(res => {
 				uni.setStorage({
 					key: 'user',
-					data: { 
-						nickName:res.nickName,
-						avatarUrl: res.avatarUrl, 
-						department: res.department, 
-						grade: res.grade, 
-						email: res.email, 
+					data: {
+						nickName: res.nickName,
+						avatarUrl: res.avatarUrl,
+						department: res.department,
+						grade: res.grade,
+						email: res.email,
 						majorClass: res.majorClass,
-						major:res.major,
-						phone:res.phone,
-						role:res.roles[0].roleName,
-						sex:res.sex,
-						account:res.userAccount
+						major: res.major,
+						phone: res.phone,
+						role: res.roles[0].roleName,
+						sex: res.sex,
+						account: res.userAccount
 					}
 				});
 				uni.setStorage({
-					key:'token',
-					data:res.token
-				})
+					key: 'token',
+					data: res.token
+				});
+				this.$store.state.hasLogin = true
 				uni.reLaunch({
 					url: '../user/user'
 				});
@@ -105,7 +104,8 @@ export default {
 		// #ifdef APP
 		// 微信登录获取openId
 		wechatLogin() {
-			console.log('使用微信登录');
+			this.$u.toast('还未开放微信登录');
+			//console.log('使用微信登录');
 		}
 		// #endif
 	}

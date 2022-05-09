@@ -73,6 +73,9 @@ export default {
 		this.getHeight();
 		// #endif
 	},
+	onTabItemTap() {
+		this.checkToken();
+	},
 	methods: {
 		// 验证token
 		checkToken() {
@@ -153,20 +156,39 @@ export default {
 					tmplIds: ids,
 					success(res) {
 						let isOk = true;
-						ids.forEach(item => {
-							if (res[item] == 'reject') {
+						for(let i = 0; i<ids.length;i++){
+							if (res[ids[i]] == 'reject') {
 								isOk = false;
 							}
+						}
+						uni.getSetting({
+							withSubscriptions: true,
+							success: res => {
+								//console.log(res)
+								if (res.subscriptionsSetting.mainSwitch) {
+									resolve(isOk);
+								} else {
+									// 用户未勾选总是同意
+									uni.showModal({
+										title: '提示',
+										content: '请勾选总是保持选择,否则影响后续服务通知！请重新登录谢谢',
+										success: function(res) {
+											uni.switchTab({
+												url: '../user/user',
+												success: function(e) {
+													var page = getCurrentPages().pop();
+													if (page == undefined || page == null) return;
+													page.onLoad();
+												}
+											});
+										}
+									});
+								}
+							},
+							fail: res => {
+								uni.$emit('rejectLogin', '网络出小差咯,请重新登录');
+							}
 						});
-						resolve(isOk);
-						// uni.getSetting({
-						// 	withSubscriptions:true,
-						// 	success: (res) => {
-						// 		if(res.subscriptionsSetting.mainSwitch){
-						// 			uni.$emit('login');
-						// 		}
-						// 	}
-						// })
 					},
 					fail: err => {
 						uni.$emit('rejectLogin', '网络出小差咯,请重新登录');

@@ -9,7 +9,7 @@ export const checkWx = (params) => http.post('/admin/wxVerify', {
 })
 
 // 请假请求
-export const vacation = (params, config = {}) => http.post('', params, config)
+export const vacation = (params, config = {}) => http.post('/leave/apply', params, config)
 
 // 用户页面验证token
 export const checkTk = (params, config = {}) => http.post('/admin/verify', params, config)

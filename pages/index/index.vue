@@ -18,6 +18,7 @@ export default {
 		this.getHeight();
 		// #endif
 	},
+	onTabItemTap() {},
 	methods: {
 		// 获取微信右上角胶囊高度
 		getHeight() {

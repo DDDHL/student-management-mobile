@@ -1,0 +1,1 @@
+<view class="data-v-1da7e636"><view class="data-v-1da7e636"><u-loading-page vue-id="78b79cf8-1" loading="{{true}}" loading-text="微信授权登录中..." image="/static/logo/wechat_gray.png" class="data-v-1da7e636" bind:__l="__l"></u-loading-page></view><u-notify vue-id="78b79cf8-2" message="Hi uView" data-ref="uNotify" class="data-v-1da7e636 vue-ref" bind:__l="__l"></u-notify></view>

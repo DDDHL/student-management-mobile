@@ -7,10 +7,8 @@ const store = new Vuex.Store({
 	},
 	actions: {
 		logout(state) {
-			state.hasLogin = !state.hasLogin;
-			uni.removeStorageSync('user')
-			uni.removeStorageSync('token')
-			uni.removeStorageSync('openId')
+			state.hasLogin = false;
+			uni.clearStorage();
 		}
 	},
 	mutations: {
