@@ -13,3 +13,6 @@ export const vacation = (params, config = {}) => http.post('/leave/apply', param
 
 // 用户页面验证token
 export const checkTk = (params, config = {}) => http.post('/admin/verify', params, config)
+
+// 获取openid
+export const getOpenId = (params) => http.post('/admin/getOpenId',params)

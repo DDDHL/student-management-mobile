@@ -48,6 +48,7 @@
 
 <script>
 import { testToken } from '@/utils/token.js';
+import { getOpenId } from '@/config/api.js';
 export default {
 	data() {
 		return {
@@ -127,21 +128,15 @@ export default {
 				timeout: 10000,
 				provider: 'weixin',
 				success: res => {
-					uni.request({
-						url: 'https://api.weixin.qq.com/sns/jscode2session',
-						method: 'GET',
-						data: {
-							appid: 'wx3f33e737660f733a',
-							secret: 'c39dfca395d2e2b6ed2969f2d77dbae7',
-							js_code: res.code
-						},
-						success: res => {
-							uni.setStorage({
-								key: 'openId',
-								data: res.data.openid
-							});
+					getOpenId({code:res.code}).then(res=>{
+						if(res.errcode){
+							console.log('openid出错')
 						}
-					});
+						uni.setStorage({
+							key: 'openId',
+							data: res.openid
+						});
+					})
 				},
 				fail: err => {
 					console.log('获取openId失败' + err);
@@ -156,42 +151,54 @@ export default {
 					tmplIds: ids,
 					success(res) {
 						let isOk = true;
-						for(let i = 0; i<ids.length;i++){
+						for (let i = 0; i < ids.length; i++) {
 							if (res[ids[i]] == 'reject') {
 								isOk = false;
 							}
 						}
 						uni.getSetting({
 							withSubscriptions: true,
+							itemSettings:true,
 							success: res => {
-								//console.log(res)
-								if (res.subscriptionsSetting.mainSwitch) {
-									resolve(isOk);
-								} else {
-									// 用户未勾选总是同意
-									uni.showModal({
-										title: '提示',
-										content: '请勾选总是保持选择,否则影响后续服务通知！请重新登录谢谢',
-										success: function(res) {
-											uni.switchTab({
-												url: '../user/user',
-												success: function(e) {
-													var page = getCurrentPages().pop();
-													if (page == undefined || page == null) return;
-													page.onLoad();
-												}
-											});
-										}
-									});
-								}
+								resolve(isOk);
+								// if (res.subscriptionsSetting.itemSettings!=undefined) {
+								// 	resolve(isOk);
+								// } else {
+								// 	// 用户未勾选总是同意
+								// 	uni.showModal({
+								// 		title: '提示',
+								// 		content: '请勾选总是保持选择,否则影响后续服务通知！请重新登录谢谢',
+								// 		success: function(res) {
+								// 			uni.switchTab({
+								// 				url: '../user/user',
+								// 				success: function(e) {
+								// 					var page = getCurrentPages().pop();
+								// 					if (page == undefined || page == null) return;
+								// 					page.onLoad();
+								// 				}
+								// 			});
+								// 		}
+								// 	});
+								// }
 							},
 							fail: res => {
+								console.log('1111')
 								uni.$emit('rejectLogin', '网络出小差咯,请重新登录');
 							}
 						});
 					},
 					fail: err => {
-						uni.$emit('rejectLogin', '网络出小差咯,请重新登录');
+						uni.showModal({
+							title: '提示',
+							content: '请打开右上角设置开启通知权限',
+							success: function (res) {
+								if (res.confirm) {
+									uni.$emit('rejectLogin', '请重新点击登录');
+								} else if (res.cancel) {
+									uni.$emit('rejectLogin', '请重新点击登录');
+								}
+							}
+						});
 					}
 				});
 			});
