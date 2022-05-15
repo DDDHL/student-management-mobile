@@ -54,15 +54,19 @@
 			"path": "pages/wechatLogin/wechatLogin",
 			"style": {
 				"navigationBarTitleText": "登录",
-				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#97d9e1"
+				"enablePullDownRefresh": false
 			}
 		}, {
 			"path": "pages/appLogin/appLogin",
 			"style": {
 				"navigationBarTitleText": "登录",
-				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#97d9e1"
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/vactionList/vactionList",
+			"style": {
+				"navigationBarTitleText": "修假单",
+				"enablePullDownRefresh": false
 			}
 		}
 	],
@@ -70,7 +74,7 @@
 		"backgroundColor": "#fff",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#97d9e1"
 	},
 	"tabBar": {
 		"backgroundColor": "#fff",

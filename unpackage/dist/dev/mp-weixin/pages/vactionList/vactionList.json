@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "修假单",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty",
+    "u-line": "/node-modules/uview-ui/components/u-line/u-line"
+  }
+}

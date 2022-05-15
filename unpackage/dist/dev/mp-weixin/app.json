@@ -6,14 +6,15 @@
     "pages/user/user",
     "pages/userInfo/userInfo",
     "pages/wechatLogin/wechatLogin",
-    "pages/appLogin/appLogin"
+    "pages/appLogin/appLogin",
+    "pages/vactionList/vactionList"
   ],
   "subPackages": [],
   "window": {
     "backgroundColor": "#fff",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#97d9e1"
   },
   "tabBar": {
     "backgroundColor": "#fff",
@@ -45,6 +46,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

@@ -1,3 +1,5 @@
+import config from "uview-ui/libs/config/config"
+
 const http = uni.$u.http
 
 // 登录或绑定
@@ -21,3 +23,6 @@ export const updateInfo = (params, config = {}) => http.post('/user/edit', param
 
 // 获取用户信息
 export const getInfo = (params, config = {}) => http.post('/user/getById', params, config)
+
+// 获取假单申请
+export const getVacation = (params,config={}) => http.post('/leave/getAll',params,config)

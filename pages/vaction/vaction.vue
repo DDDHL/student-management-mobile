@@ -22,9 +22,9 @@
 		<view class="bottom">
 			<u-divider text="END"></u-divider>
 			<u-cell-group :border="false">
-				<u-cell title="查看假单申请" isLink="true" @click="selectDate"></u-cell>
-				<u-cell title="查看学校公告" isLink="true" @click="selectDate"></u-cell>
-				<u-cell title="查看个人信息" isLink="true" @click="selectDate"></u-cell>
+				<u-cell title="查看假单申请" isLink="true" @click="goPage('vactionList',true)"></u-cell>
+				<u-cell title="查看学校公告" isLink="true" @click="goPage('index')"></u-cell>
+				<u-cell title="查看个人信息" isLink="true" @click="goPage('user')"></u-cell>
 			</u-cell-group>
 		</view>
 		<u-toast ref="uToast"></u-toast>
@@ -67,10 +67,6 @@ export default {
 		// #endif
 	},
 	onShow() {
-		console.log(this.$store.state.hasLogin);
-		setTimeout(() => {
-			console.log(this.$store.state.hasLogin);
-		}, 2000);
 		this.checkToken();
 	},
 	methods: {
@@ -105,6 +101,13 @@ export default {
 		},
 		// 提交
 		submit() {
+			if (!this.$store.state.hasLogin) {
+				this.$refs.uToast.show({
+					type: 'error',
+					message: '请先登录'
+				});
+				return;
+			}
 			if (!this.date) {
 				this.$refs.uToast.show({
 					type: 'error',
@@ -119,6 +122,9 @@ export default {
 				});
 				return;
 			}
+			uni.showLoading({
+				title: '正在提交'
+			});
 			// 验证成功发送请假请求
 			// 数据处理
 			let leaveStartTime, leaveEndTime;
@@ -139,21 +145,34 @@ export default {
 				leaveEndTime: leaveEndTime,
 				leaveReason: this.reason
 			};
-			//console.log(data);
 			vacation(data, {
 				custom: {
 					auth: true
 				}
 			}).then(res => {
-				console.log(res);
+				uni.hideLoading();
+				this.reason = '';
+				this.date = '';
 			});
-			// this.$refs.uToast.show({
-			// 	type: 'loading',
-			// 	message: '正在提交',
-			// 	complete() {
-			// 		console.log('成功');
-			// 	}
-			// });
+		},
+		// 下方跳转
+		goPage(path,isTab) {
+			if (!this.$store.state.hasLogin) {
+				this.$refs.uToast.show({
+					type: 'error',
+					message: '请先登录'
+				});
+				return;
+			}
+			if(isTab){
+				uni.navigateTo({
+					url: `../vactionList/vactionList`
+				});
+				return 
+			}
+			uni.switchTab({
+				url: `../${path}/${path}`
+			})
 		}
 	}
 };
