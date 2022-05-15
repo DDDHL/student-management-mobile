@@ -62,12 +62,11 @@ export default {
 		}
 	},
 	onLoad() {
-		this.checkToken();
 		// #ifdef MP-WEIXIN
 		this.getHeight();
 		// #endif
 	},
-	onTabItemTap() {
+	onShow() {
 		console.log(this.$store.state.hasLogin);
 		setTimeout(() => {
 			console.log(this.$store.state.hasLogin);

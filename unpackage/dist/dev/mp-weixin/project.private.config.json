@@ -1,0 +1,41 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "user",
+          "pathName": "pages/user/user",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "vaction",
+          "pathName": "pages/vaction/vaction",
+          "query": ""
+        },
+        {
+          "id": 2,
+          "name": "login",
+          "pathName": "pages/appLogin/appLogin",
+          "query": ""
+        },
+        {
+          "name": "pages/userInfo/userInfo",
+          "pathName": "pages/userInfo/userInfo",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

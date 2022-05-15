@@ -69,12 +69,11 @@ export default {
 		};
 	},
 	onLoad() {
-		this.checkToken();
 		// #ifdef MP-WEIXIN
 		this.getHeight();
 		// #endif
 	},
-	onTabItemTap() {
+	onShow() {
 		this.checkToken();
 	},
 	methods: {
@@ -205,7 +204,9 @@ export default {
 		},
 		// 编辑信息
 		editInfo() {
-			console.log('编辑信息');
+			uni.navigateTo({
+				url:'../userInfo/userInfo'
+			})
 		}
 	}
 };
