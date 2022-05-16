@@ -12,7 +12,7 @@
 					<u-cell title="请选择天数" isLink="true" :value="dayType" @click="showDayType = !showDayType"></u-cell>
 					<u-cell title="请选择日期" isLink="true" :value="date" @click="DateShow = !DateShow"></u-cell>
 					<u-cell title="发送微信通知" clickable><u-switch slot="right-icon" v-model="checked" size="20" activeColor="#5ac725"></u-switch></u-cell>
-					<view class="input"><u--textarea v-model="reason" placeholder="请输入请假原因" count maxlength="60"></u--textarea></view>
+					<view class="input"><u--textarea v-model="reason" placeholder="请输入请假原因" count maxlength="20"></u--textarea></view>
 					<view style="width: 60%;margin: 20rpx 0 40rpx 20%;"><u-button text="提交" color="#0ab99c" shape="circle" @click="submit"></u-button></view>
 				</u-cell-group>
 				<u-calendar :showTitle="false" :show="DateShow" :mode="DateMode" @confirm="confirmDate" @close="DateShow = !DateShow"></u-calendar>

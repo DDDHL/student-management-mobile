@@ -1,7 +1,7 @@
 module.exports = (vm) => {
 	uni.$u.http.setConfig((config) => {
-		// config.baseURL = 'http://113.78.197.57:9568'; /* 根域名 */
-		config.baseURL = 'http://localhost:8001'; /* 根域名 */
+		config.baseURL = 'http://113.78.183.188:9568'; /* 根域名 */
+		//config.baseURL = 'http://192.168.31.56:8001'; /* 根域名 */
 		return config
 	})
 

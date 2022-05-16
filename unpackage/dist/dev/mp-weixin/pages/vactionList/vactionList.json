@@ -1,8 +1,12 @@
 {
-  "navigationBarTitleText": "修假单",
-  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "休假单",
+  "enablePullDownRefresh": true,
   "usingComponents": {
+    "u--input": "/node-modules/uview-ui/components/u--input/u--input",
     "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty",
-    "u-line": "/node-modules/uview-ui/components/u-line/u-line"
+    "u-line": "/node-modules/uview-ui/components/u-line/u-line",
+    "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore"
   }
 }

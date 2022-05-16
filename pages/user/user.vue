@@ -144,7 +144,7 @@ export default {
 		},
 		// 订阅消息
 		wechatDingYue() {
-			let ids = ['gc2vaD4ItYL1sdr4VRt_dqM0ms0oFFQTneZUbPEuSdE', 'jEmu9I5TdjrJpmrh--HZNr64ldXJLdjJKPi_nuQnF8Y', 'z9MZO3mlh_mhTsx7aFvkCNupGaIrpf7RB2wmmwwjqog'];
+			let ids = ['Np-O5k2OZMay0LzYtirB-qfK_cwp1uuzGSOG9Gl-cLc', 'z9MZO3mlh_mhTsx7aFvkCNupGaIrpf7RB2wmmwwjqog'];
 			return new Promise((resolve, reject) => {
 				uni.requestSubscribeMessage({
 					tmplIds: ids,
@@ -160,25 +160,25 @@ export default {
 							itemSettings:true,
 							success: res => {
 								resolve(isOk);
-								// if (res.subscriptionsSetting.itemSettings!=undefined) {
-								// 	resolve(isOk);
-								// } else {
-								// 	// 用户未勾选总是同意
-								// 	uni.showModal({
-								// 		title: '提示',
-								// 		content: '请勾选总是保持选择,否则影响后续服务通知！请重新登录谢谢',
-								// 		success: function(res) {
-								// 			uni.switchTab({
-								// 				url: '../user/user',
-								// 				success: function(e) {
-								// 					var page = getCurrentPages().pop();
-								// 					if (page == undefined || page == null) return;
-								// 					page.onLoad();
-								// 				}
-								// 			});
-								// 		}
-								// 	});
-								// }
+								if (res.subscriptionsSetting.itemSettings!=undefined) {
+									resolve(isOk);
+								} else {
+									// 用户未勾选总是同意
+									uni.showModal({
+										title: '提示',
+										content: '请勾选总是保持选择,否则影响后续服务通知！请重新登录谢谢',
+										success: function(res) {
+											uni.switchTab({
+												url: '../user/user',
+												success: function(e) {
+													var page = getCurrentPages().pop();
+													if (page == undefined || page == null) return;
+													page.onLoad();
+												}
+											});
+										}
+									});
+								}
 							},
 							fail: res => {
 								console.log('1111')

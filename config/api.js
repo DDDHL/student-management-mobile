@@ -26,3 +26,6 @@ export const getInfo = (params, config = {}) => http.post('/user/getById', param
 
 // 获取假单申请
 export const getVacation = (params,config={}) => http.post('/leave/getAll',params,config)
+
+// 审批假单
+export const approval = (params,config={})=> http.post('/leave/approval',params,config)

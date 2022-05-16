@@ -65,8 +65,9 @@
 		}, {
 			"path": "pages/vactionList/vactionList",
 			"style": {
-				"navigationBarTitleText": "修假单",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "休假单",
+				"enablePullDownRefresh": true
+				
 			}
 		}
 	],
