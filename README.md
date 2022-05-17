@@ -48,6 +48,6 @@
     </tr>
     <tr>
         <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/tongzhi.jpg"/></td>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/shenpi.png"/></td>
+        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/shenpi.jpg"/></td>
     </tr>
 </table>
