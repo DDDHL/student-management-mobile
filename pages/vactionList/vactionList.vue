@@ -58,12 +58,7 @@
 				<view class="show_item"><u-button type="error" text="不通过" @click="upload(false)"></u-button></view>
 			</view>
 		</u-popup>
-		<u-loadmore
-			:status="loadingStatus"
-			bgColor="#f5f5f5"
-			marginTop="0"
-			marginBottom="0"
-		/>
+		<view v-show="!isEnd"><u-loadmore :status="loadingStatus" bgColor="#f5f5f5" marginTop="0" marginBottom="0" /></view>
 	</view>
 </template>
 
@@ -87,8 +82,10 @@ export default {
 				userAccount: ''
 			},
 			role: '',
-			isEnd: false,
-			loadingStatus:'loading'
+			isEnd: true,
+			loadingStatus: 'loading',
+			total: 0,
+			bottomTime: 1
 		};
 	},
 	computed: {
@@ -107,12 +104,30 @@ export default {
 		}
 	},
 	created() {
-		this.getData();
+		this.getData().then(res => {
+			if (res.length == 0) {
+				this.isEmpty = true;
+				return;
+			}
+			this.data = res;
+		});
 		this.role = uni.getStorageSync('user').role;
 	},
 	onReachBottom() {
-		// this.query.pageNum++
-		// this.getData()
+		if (this.bottomTime == Math.ceil(this.total / 10)) {
+			this.isEnd = true;
+			return;
+		}
+		this.isEnd = false;
+		this.query.pageNum++;
+		this.getData().then(res => {
+			console.log(res);
+			this.data.push(...res);
+			this.bottomTime++;
+			if (this.bottomTime == Math.ceil(this.total / 10)) {
+				this.isEnd = true;
+			}
+		});
 	},
 	methods: {
 		searchData() {
@@ -155,15 +170,15 @@ export default {
 			this.show = true;
 		},
 		getData() {
-			getVacation(this.query, {
-				custom: {
-					auth: true
-				}
-			}).then(res => {
-				if (this.data.length == 0) {
-					this.isEmpty = true;
-				}
-				this.data = res.records;
+			return new Promise((resolve, reject) => {
+				getVacation(this.query, {
+					custom: {
+						auth: true
+					}
+				}).then(res => {
+					this.total = res.total;
+					resolve(res.records);
+				});
 			});
 		}
 	}
