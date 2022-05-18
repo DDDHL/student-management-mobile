@@ -113,6 +113,10 @@ export default {
 		});
 		this.role = uni.getStorageSync('user').role;
 	},
+	onPullDownRefresh(){
+		this.query.pageNum = 1
+		this.getData()
+	},
 	onReachBottom() {
 		if (this.bottomTime == Math.ceil(this.total / 10)) {
 			this.isEnd = true;
@@ -178,6 +182,7 @@ export default {
 				}).then(res => {
 					this.total = res.total;
 					resolve(res.records);
+					uni.stopPullDownRefresh()
 				});
 			});
 		}

@@ -22,7 +22,7 @@
 		<view class="bottom">
 			<u-divider text="END"></u-divider>
 			<u-cell-group :border="false">
-				<u-cell title="查看假单申请" isLink="true" @click="goPage('vactionList',true)"></u-cell>
+				<u-cell title="查看假单申请" isLink="true" @click="goPage('vactionList', true)"></u-cell>
 				<u-cell title="查看学校公告" isLink="true" @click="goPage('index')"></u-cell>
 				<u-cell title="查看个人信息" isLink="true" @click="goPage('user')"></u-cell>
 			</u-cell-group>
@@ -34,6 +34,7 @@
 <script>
 import { testToken } from '@/utils/token.js';
 import { vacation } from '@/config/api.js';
+import { wechatDingYue } from '@/utils/getWeChatPermit.js';
 export default {
 	data() {
 		return {
@@ -59,6 +60,13 @@ export default {
 				this.DateMode = 'single';
 			}
 			this.date = '';
+		}
+	},
+	onTabItemTap() {
+		if (this.$store.state.hasLogin) {
+			wechatDingYue().then(res => {
+				console.log(res);
+			});
 		}
 	},
 	onLoad() {
@@ -156,7 +164,7 @@ export default {
 			});
 		},
 		// 下方跳转
-		goPage(path,isTab) {
+		goPage(path, isTab) {
 			if (!this.$store.state.hasLogin) {
 				this.$refs.uToast.show({
 					type: 'error',
@@ -164,15 +172,15 @@ export default {
 				});
 				return;
 			}
-			if(isTab){
+			if (isTab) {
 				uni.navigateTo({
 					url: `../vactionList/vactionList`
 				});
-				return 
+				return;
 			}
 			uni.switchTab({
 				url: `../${path}/${path}`
-			})
+			});
 		}
 	}
 };
