@@ -1,5 +1,5 @@
 <p align="center">
-	<img alt="logo" width="80" src="https://gitee.com/donghe-li/images/raw/master/student-mangement/logo.png">
+	<img alt="logo" width="80" src="https://img-blog.csdnimg.cn/f175e8d454a24b588726290b74a317c8.png">
 </p>
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">ixh学生管理系统</h1>
 <h4 align="center">基于 SpringBoot + Uniapp + uView2 移动端休假助手</h4>
@@ -31,23 +31,23 @@
 
 <table>
     <tr>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/login.jpg"/></td>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/login3.jpg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/370a45286a614260996cfdde9f02ca72.jpeg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/3db8a522a4e844b4b965aa536c01c3db.jpeg"/></td>
     </tr>
     <tr>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/login1.jpg"/></td>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/login2.jpg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/7f722e3a99cb49bfaaaf5d44daa97d56.jpeg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/a974ff34e662409f89af5d50baa97f6f.jpeg"/></td>
     </tr>
     ​<tr>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/info.png"/></td>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/other.jpg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/0f43ed320a8c436f96a8cba333a1fe5b.jpeg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/122dcee613f24477a2733fcb2c48d3dc.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/vacation1.png"/></td>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/vacation2.png"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/5063f5ff3a80495cb0dc884b8ac5f71a.png"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/e82097be35784200ab428c3a9635f3cd.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/tongzhi.jpg"/></td>
-        <td><img src="https://gitee.com/donghe-li/images/raw/master/student-mangement-mobile/shenpi.jpg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/ee43cf7b25ae4134993364894ebb214f.jpeg"/></td>
+        <td><img src="https://img-blog.csdnimg.cn/d87c69976c1645a28ea63689874df17b.jpeg"/></td>
     </tr>
 </table>
